@@ -1,0 +1,1106 @@
+{
+  "id": "908b3917-57a8-45ce-82bf-6e093021d200",
+  "name": "Launchpad: Non-POS Merchant Boarding",
+  "description": "The Launchpad Merchant Boarding API allows Worldpay partners to onboard merchants to Worldpay's Payments Platform. Please see the Getting Started page for more information. </br> </br> To contact our certifications team, please email <a href=\"mailto:Certification2@fisglobal.com\">Certification2@fisglobal.com</a>.   </br> To contact the product team, please email <a href=\"mailto:APICustomerIntegration@fisglobal.com\">APICustomerIntegration@fisglobal.com</a \n # Authentication \n<SecurityDefinitions />",
+  "order": [],
+  "folders": [
+    {
+      "id": "7cc148f3-3d18-4595-8f39-eb46ab1eea58",
+      "name": "Initiate Boarding Application",
+      "description": "Resources to create/edit and read pending boarding applications.",
+      "order": [
+        "2dd2ff81-fdfe-4f84-82f3-e05261093e8c",
+        "1603ec35-a7f4-4347-8b9a-88d6d9a2d271",
+        "42a2c268-ed78-4b6c-8974-f7bdbb6973d6"
+      ],
+      "collection_id": "908b3917-57a8-45ce-82bf-6e093021d200"
+    },
+    {
+      "id": "72d38d19-aeb7-437e-a136-98fb58ac2173",
+      "name": "Equipment Lookup",
+      "description": "Equipment Lookup",
+      "order": [
+        "d6a5069e-421b-400a-9a76-f0f5eb37fb86",
+        "83265e01-c546-4e17-b3d9-7b563e259d52"
+      ],
+      "collection_id": "908b3917-57a8-45ce-82bf-6e093021d200"
+    },
+    {
+      "id": "2fa52e69-548c-4bf7-970a-83e17c92b62b",
+      "name": "Choose Equipment",
+      "description": "Resources to choose the terminals.",
+      "order": [
+        "64dc2fd2-f4e2-4506-9c85-1549daada047",
+        "c4d43af9-6b6b-41da-a5c3-81f5f4cda3a0",
+        "fbf7310a-a6c2-4e90-9b60-fe5987c3fe23"
+      ],
+      "collection_id": "908b3917-57a8-45ce-82bf-6e093021d200"
+    },
+    {
+      "id": "919be66a-15dc-4fdb-974b-ce30e3f2cf18",
+      "name": "Submit Application",
+      "description": "Resources to validate and submit the final application for boarding.",
+      "order": [
+        "82b9399c-3a1f-4974-952e-ac11621f239d",
+        "ddba518a-e007-4b50-a00c-a69b8f589c04"
+      ],
+      "collection_id": "908b3917-57a8-45ce-82bf-6e093021d200"
+    },
+    {
+      "id": "fd1ededd-f3b9-4cd2-8f9f-eb131eda0cf2",
+      "name": "Check Application Status",
+      "description": "Resource to check status of the application.",
+      "order": [
+        "179717f2-48c0-4dbc-a338-e23195ef8d20",
+        "2040b7cd-d40b-44f7-82e8-fca8027c52d4",
+        "969a1559-cebf-42c5-b2f9-21da6937c9f7"
+      ],
+      "collection_id": "908b3917-57a8-45ce-82bf-6e093021d200"
+    },
+    {
+      "id": "e9e38734-cbc3-4bfb-9ca2-3746d50d81d6",
+      "name": "Review and Sign Contract",
+      "description": "Resources to retrieve the contract and digitally sign.",
+      "order": [
+        "3ad6fcd0-7a7a-493e-9440-dca787951988",
+        "842a81d1-65a2-45a9-bc71-f56056069aa0"
+      ],
+      "collection_id": "908b3917-57a8-45ce-82bf-6e093021d200"
+    },
+    {
+      "id": "d6cf6db9-81c0-4475-bb1d-40f5ce262e20",
+      "name": "Check Launchpad health",
+      "description": "Resources to check the the health of Launchpad and its dependent down streams systems at regular intervals to check the system is up or down.",
+      "order": [
+        "e0a61e89-dba6-4f2a-a6f5-2f1a960cc3fa"
+      ],
+      "collection_id": "908b3917-57a8-45ce-82bf-6e093021d200"
+    }
+  ],
+  "requests": [
+    {
+      "folder": "7cc148f3-3d18-4595-8f39-eb46ab1eea58",
+      "id": "2dd2ff81-fdfe-4f84-82f3-e05261093e8c",
+      "name": "ExisitingApplication",
+      "dataMode": "raw",
+      "dataDisabled": false,
+      "descriptionFormat": "markdown",
+      "description": "This endpoint allows merchants to update an existing application with new information.",
+      "headers": "v-correlation-id:3fcb1437-4e52-4946-9ae1-e618351b6d16\r\nContent-Type:application/json\r\nAccept:application/json\r\n",
+      "method": "PUT",
+      "pathVariables": {},
+      "url": "{{default}}/applications",
+      "responses": [
+        {
+          "request": "2dd2ff81-fdfe-4f84-82f3-e05261093e8c",
+          "id": "3bf37037-8e91-40e5-a9db-3edd2b375dea",
+          "name": "Response_200",
+          "status": "Success",
+          "responseCode": {
+            "code": 200,
+            "name": "200",
+            "detail": "Success"
+          },
+          "headers": [
+            {
+              "name": "v-correlation-id",
+              "key": "v-correlation-id",
+              "value": "3fcb1437-4e52-4946-9ae1-e618351b6d16",
+              "description": "Unique transaction Id. Will be generated if not provided and returned in response headers."
+            }
+          ],
+          "language": "Text"
+        }
+      ],
+      "rawModeData": "{\r\n  \"externalRefId\": \"df8a6d82-3bb4-4f3b-ba18-57a5981ede8e\",\r\n  \"businessInfo\": {\r\n    \"dbaName\": \"The DBA Name\",\r\n    \"legalName\": \"legalName92\",\r\n    \"ownershipType\": \"LLC\",\r\n    \"mccCode\": \"5812\",\r\n    \"businessEstablishedDate\": \"2000-03-23\",\r\n    \"websiteUrl\": \"www.thefoodplace.com\",\r\n    \"numberOfLocation\": 2,\r\n    \"federalTaxId\": \"123456781\",\r\n    \"paymentAcceptanceMethod\": [\r\n      \"inPerson\",\r\n      \"onlineSite\"\r\n    ],\r\n    \"pciadc\": \"No\",\r\n    \"pcidssValidated\": \"No\",\r\n    \"surroundingArea\": \"Commercial\",\r\n    \"productServiceSold\": \"Food\",\r\n    \"ownAddYears\": 2,\r\n    \"lengthOfContract\": \"lengthOfContract37\",\r\n    \"seasonal\": \"Yes\",\r\n    \"activeMonths\": [\r\n      \"Jan\",\r\n      \"Feb\",\r\n      \"Mar\"\r\n    ],\r\n    \"warranty\": \"1 YEAR\",\r\n    \"returnPolicy\": \"30 Day\",\r\n    \"taxExempt\": \"true\",\r\n    \"acceptCreditCards\": \"true\",\r\n    \"govOwnedMerchantCountry\": \"US\"\r\n  },\r\n  \"transactionInfo\": {\r\n    \"annualSalesVolume\": 20000.12,\r\n    \"percentRetailSwipedTransactions\": 82,\r\n    \"averageTicket\": 2.3,\r\n    \"highestTicket\": 32.41,\r\n    \"currentProcessor\": \"Global Payments\",\r\n    \"acceptChargebacks\": \"No\",\r\n    \"chargebackPercent\": 0,\r\n    \"returnPercent\": 10,\r\n    \"cardNotPresentPercent\": 20,\r\n    \"businessToBusinessPercent\": 20,\r\n    \"internetTransactionPercent\": 10,\r\n    \"inPersonTransactionPercent\": 10,\r\n    \"motoTransactionPercent\": 10,\r\n    \"annualCreditSalesVolume\": 123.32,\r\n    \"annualDebitSalesVolume\": 32.23,\r\n    \"annualAmexVolume\": 10000,\r\n    \"amexAverageTicket\": 2.3,\r\n    \"averageNumberofDays\": 10,\r\n    \"needsProcessingBy\": \"2022-11-01\"\r\n  },\r\n  \"leadSource\": \"Activate\",\r\n  \"owners\": [\r\n    {\r\n      \"type\": \"Control Owner Contact\",\r\n      \"firstName\": \"Todd\",\r\n      \"lastName\": \"Davis\",\r\n      \"phoneNumber\": \"5131234567\",\r\n      \"email\": \"test@gmail.com\",\r\n      \"addressLine1\": \"4355 N Coalwhipe St.\",\r\n      \"city\": \"Denver\",\r\n      \"state\": \"CO\",\r\n      \"country\": \"United States\",\r\n      \"postalCode\": \"12345\",\r\n      \"title\": \"President\",\r\n      \"middleInitial\": \"M\",\r\n      \"phoneNumberExt\": \"1234\",\r\n      \"phoneType\": \"mobile\",\r\n      \"alternatePhone\": \"5131234567\",\r\n      \"alternatePhoneType\": \"home\",\r\n      \"faxNumber\": \"5131234567\",\r\n      \"ownershipPercentage\": 52,\r\n      \"ssn\": \"123456789\",\r\n      \"dob\": \"2000-03-23\",\r\n      \"addressLine2\": \"suite 104\",\r\n      \"postalCodeExtension\": \"1234\",\r\n      \"identification\": [\r\n        {\r\n          \"idType\": \"PASSPORT\",\r\n          \"idNumber\": \"312312341\",\r\n          \"issuedCity\": \"City Town\",\r\n          \"issuedState\": \"CO\",\r\n          \"issuedCountry\": \"US\",\r\n          \"dateIssued\": \"1999-01-30\",\r\n          \"dateExpires\": \"2020-02-11\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"guarantors\": [\r\n    {\r\n      \"type\": \"Guarantor 1 Contact\",\r\n      \"firstName\": \"Todd\",\r\n      \"lastName\": \"Davis\",\r\n      \"phoneNumber\": \"5131234567\",\r\n      \"email\": \"test@gmail.com\",\r\n      \"addressLine1\": \"4355 N Coalwhipe St.\",\r\n      \"city\": \"Denver\",\r\n      \"state\": \"CO\",\r\n      \"country\": \"United States\",\r\n      \"postalCode\": \"12345\",\r\n      \"title\": \"President\",\r\n      \"middleInitial\": \"M\",\r\n      \"phoneNumberExt\": \"1234\",\r\n      \"phoneType\": \"mobile\",\r\n      \"alternatePhone\": \"5131234567\",\r\n      \"alternatePhoneType\": \"home\",\r\n      \"faxNumber\": \"5131234567\",\r\n      \"ownershipPercentage\": 19,\r\n      \"ssn\": \"123456789\",\r\n      \"dob\": \"2000-03-23\",\r\n      \"addressLine2\": \"suite 104\",\r\n      \"postalCodeExtension\": \"1234\",\r\n      \"identification\": [\r\n        {\r\n          \"idType\": \"PASSPORT\",\r\n          \"idNumber\": \"312312341\",\r\n          \"issuedCity\": \"City Town\",\r\n          \"issuedState\": \"CO\",\r\n          \"issuedCountry\": \"US\",\r\n          \"dateIssued\": \"1999-01-30\",\r\n          \"dateExpires\": \"2020-02-11\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"authorizedSigners\": [\r\n    {\r\n      \"roleName\": \"Merchant\",\r\n      \"signingExperience\": \"email\",\r\n      \"signingOrder\": \"2\",\r\n      \"firstName\": \"Todd\",\r\n      \"lastName\": \"Davis\",\r\n      \"phoneNumber\": \"5131234567\",\r\n      \"email\": \"test@gmail.com\",\r\n      \"ssn\": \"123456789\",\r\n      \"dob\": \"2000-03-23\",\r\n      \"addressLine1\": \"4355 N Coalwhipe St.\",\r\n      \"city\": \"Denver\",\r\n      \"state\": \"CO\",\r\n      \"country\": \"United States\",\r\n      \"postalCode\": \"12345\",\r\n      \"title\": \"President\",\r\n      \"middleInitial\": \"M\",\r\n      \"phoneNumberExt\": \"1234\",\r\n      \"phoneType\": \"mobile\",\r\n      \"alternatePhone\": \"5131234567\",\r\n      \"alternatePhoneType\": \"home\",\r\n      \"faxNumber\": \"5131234567\",\r\n      \"addressLine2\": \"suite 104\",\r\n      \"postalCodeExtension\": \"1234\",\r\n      \"identification\": [\r\n        {\r\n          \"idType\": \"PASSPORT\",\r\n          \"idNumber\": \"312312341\",\r\n          \"issuedCity\": \"City Town\",\r\n          \"issuedState\": \"CO\",\r\n          \"issuedCountry\": \"US\",\r\n          \"dateIssued\": \"1999-01-30\",\r\n          \"dateExpires\": \"2020-02-11\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"contacts\": [\r\n    {\r\n      \"type\": \"Primary Contact\",\r\n      \"firstName\": \"Todd\",\r\n      \"lastName\": \"Davis\",\r\n      \"phoneNumber\": \"5131234567\",\r\n      \"email\": \"test@gmail.com\",\r\n      \"title\": \"President\",\r\n      \"middleInitial\": \"M\",\r\n      \"ssn\": \"123456789\",\r\n      \"birthDate\": \"2000-03-23\",\r\n      \"phoneNumberExt\": \"1234\",\r\n      \"phoneType\": \"mobile\",\r\n      \"alternatePhone\": \"5131234567\",\r\n      \"alternatePhoneType\": \"home\",\r\n      \"faxNumber\": \"5131234567\"\r\n    }\r\n  ],\r\n  \"addresses\": [\r\n    {\r\n      \"type\": \"Physical Address\",\r\n      \"addressLine1\": \"4355 N Coalwhipe St.\",\r\n      \"city\": \"Denver\",\r\n      \"state\": \"CO\",\r\n      \"country\": \"United States\",\r\n      \"postalCode\": \"12345\",\r\n      \"addressLine2\": \"suite 104\",\r\n      \"postalCodeExtension\": \"1234\"\r\n    }\r\n  ],\r\n  \"bankAccount\": {\r\n    \"ddaType\": \"Checking\",\r\n    \"achType\": \"Commercial Checking\",\r\n    \"accountNumber\": \"011401545\",\r\n    \"routingNumber\": \"102000076\",\r\n    \"bankName\": \"Bank name\"\r\n  },\r\n  \"advancedSettelment\": [\r\n    {\r\n      \"settlementCategories\": [\r\n        \"Fees\"\r\n      ],\r\n      \"bankAccount\": {\r\n        \"ddaType\": \"Checking\",\r\n        \"achType\": \"Commercial Checking\",\r\n        \"accountNumber\": \"011401545\",\r\n        \"routingNumber\": \"102000076\",\r\n        \"bankName\": \"Bank name\"\r\n      }\r\n    }\r\n  ],\r\n  \"salesAgent\": {\r\n    \"firstName\": \"John\",\r\n    \"lastName\": \"Doe\",\r\n    \"email\": \"email43\",\r\n    \"id\": \"U15315\",\r\n    \"mobilePhoneNumber\": \"1234567890\"\r\n  },\r\n  \"installationContact\": {\r\n    \"firstName\": \"Sam\",\r\n    \"lastName\": \"Doe\",\r\n    \"email\": \"email36\",\r\n    \"id\": \"U15318\",\r\n    \"mobilePhoneNumber\": \"1234567890\"\r\n  },\r\n  \"routeToSalesRep\": false\r\n}",
+      "collectionId": "908b3917-57a8-45ce-82bf-6e093021d200",
+      "queryParams": [],
+      "headerData": [
+        {
+          "key": "v-correlation-id",
+          "value": "3fcb1437-4e52-4946-9ae1-e618351b6d16",
+          "description": "Unique transaction Id. Will be generated if not provided and returned in response headers."
+        },
+        {
+          "key": "Content-Type",
+          "value": "application/json",
+          "description": "Indicates the media type of the request-body. Accepts application/json."
+        },
+        {
+          "key": "Accept",
+          "value": "application/json"
+        }
+      ],
+      "pathVariableData": []
+    },
+    {
+      "folder": "7cc148f3-3d18-4595-8f39-eb46ab1eea58",
+      "id": "1603ec35-a7f4-4347-8b9a-88d6d9a2d271",
+      "name": "NewApplication",
+      "dataMode": "raw",
+      "dataDisabled": false,
+      "descriptionFormat": "markdown",
+      "description": "Use this endpoint to collect the merchant information needed to initiate a new contract. ",
+      "headers": "v-correlation-id:3fcb1437-4e52-4946-9ae1-e618351b6d16\r\nContent-Type:application/json\r\nAccept:application/json\r\n",
+      "method": "POST",
+      "pathVariables": {},
+      "url": "{{default}}/applications",
+      "responses": [
+        {
+          "request": "1603ec35-a7f4-4347-8b9a-88d6d9a2d271",
+          "id": "8acaed2d-4aaf-44c8-b542-b6d94ab09c4a",
+          "name": "Response_201",
+          "status": "Created",
+          "responseCode": {
+            "code": 201,
+            "name": "201",
+            "detail": "Created"
+          },
+          "headers": [
+            {
+              "name": "v-correlation-id",
+              "key": "v-correlation-id",
+              "value": "3fcb1437-4e52-4946-9ae1-e618351b6d16",
+              "description": "Unique transaction Id. Will be generated if not provided and returned in response headers."
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "mime": "application/json",
+          "text": "{\r\n  \"externalRefId\": \"df8a6d82-3bb4-4f3b-ba18-57a5981ede8e\"\r\n}",
+          "language": "Text",
+          "rawDataType": "text"
+        }
+      ],
+      "rawModeData": "{\r\n  \"businessInfo\": {\r\n    \"dbaName\": \"The DBA Name\",\r\n    \"legalName\": \"legalName92\",\r\n    \"ownershipType\": \"LLC\",\r\n    \"mccCode\": \"5812\",\r\n    \"businessEstablishedDate\": \"2000-03-23\",\r\n    \"websiteUrl\": \"www.thefoodplace.com\",\r\n    \"numberOfLocation\": 2,\r\n    \"federalTaxId\": \"123456781\",\r\n    \"paymentAcceptanceMethod\": [\r\n      \"inPerson\",\r\n      \"onlineSite\"\r\n    ],\r\n    \"pciadc\": \"No\",\r\n    \"pcidssValidated\": \"No\",\r\n    \"surroundingArea\": \"Commercial\",\r\n    \"productServiceSold\": \"Food\",\r\n    \"ownAddYears\": 2,\r\n    \"lengthOfContract\": \"lengthOfContract37\",\r\n    \"seasonal\": \"Yes\",\r\n    \"activeMonths\": [\r\n      \"Jan\",\r\n      \"Feb\",\r\n      \"Mar\"\r\n    ],\r\n    \"warranty\": \"1 YEAR\",\r\n    \"returnPolicy\": \"30 Day\",\r\n    \"taxExempt\": \"true\",\r\n    \"acceptCreditCards\": \"true\",\r\n    \"govOwnedMerchantCountry\": \"US\"\r\n  },\r\n  \"transactionInfo\": {\r\n    \"annualSalesVolume\": 20000.12,\r\n    \"percentRetailSwipedTransactions\": 82,\r\n    \"averageTicket\": 2.3,\r\n    \"highestTicket\": 32.41,\r\n    \"currentProcessor\": \"Global Payments\",\r\n    \"acceptChargebacks\": \"No\",\r\n    \"chargebackPercent\": 0,\r\n    \"returnPercent\": 10,\r\n    \"cardNotPresentPercent\": 20,\r\n    \"businessToBusinessPercent\": 20,\r\n    \"internetTransactionPercent\": 10,\r\n    \"inPersonTransactionPercent\": 10,\r\n    \"motoTransactionPercent\": 10,\r\n    \"annualCreditSalesVolume\": 123.32,\r\n    \"annualDebitSalesVolume\": 32.23,\r\n    \"annualAmexVolume\": 10000,\r\n    \"amexAverageTicket\": 2.3,\r\n    \"averageNumberofDays\": 10,\r\n    \"needsProcessingBy\": \"2022-11-01\"\r\n  },\r\n  \"authorizedSigners\": [\r\n    {\r\n      \"roleName\": \"Merchant\",\r\n      \"signingExperience\": \"email\",\r\n      \"signingOrder\": \"2\",\r\n      \"firstName\": \"Todd\",\r\n      \"lastName\": \"Davis\",\r\n      \"phoneNumber\": \"5131234567\",\r\n      \"email\": \"test@gmail.com\",\r\n      \"ssn\": \"123456789\",\r\n      \"dob\": \"2000-03-23\",\r\n      \"addressLine1\": \"4355 N Coalwhipe St.\",\r\n      \"city\": \"Denver\",\r\n      \"state\": \"CO\",\r\n      \"country\": \"United States\",\r\n      \"postalCode\": \"12345\",\r\n      \"title\": \"President\",\r\n      \"middleInitial\": \"M\",\r\n      \"phoneNumberExt\": \"1234\",\r\n      \"phoneType\": \"mobile\",\r\n      \"alternatePhone\": \"5131234567\",\r\n      \"alternatePhoneType\": \"home\",\r\n      \"faxNumber\": \"5131234567\",\r\n      \"addressLine2\": \"suite 104\",\r\n      \"postalCodeExtension\": \"1234\",\r\n      \"identification\": [\r\n        {\r\n          \"idType\": \"PASSPORT\",\r\n          \"idNumber\": \"312312341\",\r\n          \"issuedCity\": \"City Town\",\r\n          \"issuedState\": \"CO\",\r\n          \"issuedCountry\": \"US\",\r\n          \"dateIssued\": \"1999-01-30\",\r\n          \"dateExpires\": \"2020-02-11\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"contacts\": [\r\n    {\r\n      \"type\": \"Primary Contact\",\r\n      \"firstName\": \"Todd\",\r\n      \"lastName\": \"Davis\",\r\n      \"phoneNumber\": \"5131234567\",\r\n      \"email\": \"test@gmail.com\",\r\n      \"title\": \"President\",\r\n      \"middleInitial\": \"M\",\r\n      \"ssn\": \"123456789\",\r\n      \"birthDate\": \"2000-03-23\",\r\n      \"phoneNumberExt\": \"1234\",\r\n      \"phoneType\": \"mobile\",\r\n      \"alternatePhone\": \"5131234567\",\r\n      \"alternatePhoneType\": \"home\",\r\n      \"faxNumber\": \"5131234567\"\r\n    }\r\n  ],\r\n  \"addresses\": [\r\n    {\r\n      \"type\": \"Physical Address\",\r\n      \"addressLine1\": \"4355 N Coalwhipe St.\",\r\n      \"city\": \"Denver\",\r\n      \"state\": \"CO\",\r\n      \"country\": \"United States\",\r\n      \"postalCode\": \"12345\",\r\n      \"addressLine2\": \"suite 104\",\r\n      \"postalCodeExtension\": \"1234\"\r\n    }\r\n  ],\r\n  \"clientTrackingId\": \"1341341234132412341\",\r\n  \"owners\": [\r\n    {\r\n      \"type\": \"Control Owner Contact\",\r\n      \"firstName\": \"Todd\",\r\n      \"lastName\": \"Davis\",\r\n      \"phoneNumber\": \"5131234567\",\r\n      \"email\": \"test@gmail.com\",\r\n      \"addressLine1\": \"4355 N Coalwhipe St.\",\r\n      \"city\": \"Denver\",\r\n      \"state\": \"CO\",\r\n      \"country\": \"United States\",\r\n      \"postalCode\": \"12345\",\r\n      \"title\": \"President\",\r\n      \"middleInitial\": \"M\",\r\n      \"phoneNumberExt\": \"1234\",\r\n      \"phoneType\": \"mobile\",\r\n      \"alternatePhone\": \"5131234567\",\r\n      \"alternatePhoneType\": \"home\",\r\n      \"faxNumber\": \"5131234567\",\r\n      \"ownershipPercentage\": 52,\r\n      \"ssn\": \"123456789\",\r\n      \"dob\": \"2000-03-23\",\r\n      \"addressLine2\": \"suite 104\",\r\n      \"postalCodeExtension\": \"1234\",\r\n      \"identification\": [\r\n        {\r\n          \"idType\": \"PASSPORT\",\r\n          \"idNumber\": \"312312341\",\r\n          \"issuedCity\": \"City Town\",\r\n          \"issuedState\": \"CO\",\r\n          \"issuedCountry\": \"US\",\r\n          \"dateIssued\": \"1999-01-30\",\r\n          \"dateExpires\": \"2020-02-11\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"guarantors\": [\r\n    {\r\n      \"type\": \"Guarantor 1 Contact\",\r\n      \"firstName\": \"Todd\",\r\n      \"lastName\": \"Davis\",\r\n      \"phoneNumber\": \"5131234567\",\r\n      \"email\": \"test@gmail.com\",\r\n      \"addressLine1\": \"4355 N Coalwhipe St.\",\r\n      \"city\": \"Denver\",\r\n      \"state\": \"CO\",\r\n      \"country\": \"United States\",\r\n      \"postalCode\": \"12345\",\r\n      \"title\": \"President\",\r\n      \"middleInitial\": \"M\",\r\n      \"phoneNumberExt\": \"1234\",\r\n      \"phoneType\": \"mobile\",\r\n      \"alternatePhone\": \"5131234567\",\r\n      \"alternatePhoneType\": \"home\",\r\n      \"faxNumber\": \"5131234567\",\r\n      \"ownershipPercentage\": 19,\r\n      \"ssn\": \"123456789\",\r\n      \"dob\": \"2000-03-23\",\r\n      \"addressLine2\": \"suite 104\",\r\n      \"postalCodeExtension\": \"1234\",\r\n      \"identification\": [\r\n        {\r\n          \"idType\": \"PASSPORT\",\r\n          \"idNumber\": \"312312341\",\r\n          \"issuedCity\": \"City Town\",\r\n          \"issuedState\": \"CO\",\r\n          \"issuedCountry\": \"US\",\r\n          \"dateIssued\": \"1999-01-30\",\r\n          \"dateExpires\": \"2020-02-11\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"bankAccount\": {\r\n    \"ddaType\": \"Checking\",\r\n    \"achType\": \"Commercial Checking\",\r\n    \"accountNumber\": \"011401545\",\r\n    \"routingNumber\": \"102000076\",\r\n    \"bankName\": \"Bank name\"\r\n  },\r\n  \"advancedSettelment\": [\r\n    {\r\n      \"settlementCategories\": [\r\n        \"Fees\"\r\n      ],\r\n      \"bankAccount\": {\r\n        \"ddaType\": \"Checking\",\r\n        \"achType\": \"Commercial Checking\",\r\n        \"accountNumber\": \"011401545\",\r\n        \"routingNumber\": \"102000076\",\r\n        \"bankName\": \"Bank name\"\r\n      }\r\n    }\r\n  ],\r\n  \"salesAgent\": {\r\n    \"firstName\": \"John\",\r\n    \"lastName\": \"Doe\",\r\n    \"email\": \"email43\",\r\n    \"id\": \"U15315\",\r\n    \"mobilePhoneNumber\": \"1234567890\"\r\n  },\r\n  \"installationContact\": {\r\n    \"firstName\": \"Sam\",\r\n    \"lastName\": \"Doe\",\r\n    \"email\": \"email36\",\r\n    \"id\": \"U15318\",\r\n    \"mobilePhoneNumber\": \"1234567890\"\r\n  },\r\n  \"additionalInformation\": [\r\n    {\r\n      \"key\": \"partnerEmployeeId\",\r\n      \"value\": \"4656\"\r\n    }\r\n  ],\r\n  \"leadSource\": \"LP Connect API\",\r\n  \"routeToSalesRep\": true,\r\n  \"productsInquiry\": [\r\n    \"productsInquiry98\"\r\n  ]\r\n}",
+      "collectionId": "908b3917-57a8-45ce-82bf-6e093021d200",
+      "queryParams": [],
+      "headerData": [
+        {
+          "key": "v-correlation-id",
+          "value": "3fcb1437-4e52-4946-9ae1-e618351b6d16",
+          "description": "Unique transaction Id. Will be generated if not provided and returned in response headers."
+        },
+        {
+          "key": "Content-Type",
+          "value": "application/json",
+          "description": "Indicates the media type of the request-body. Accepts application/json."
+        },
+        {
+          "key": "Accept",
+          "value": "application/json"
+        }
+      ],
+      "pathVariableData": []
+    },
+    {
+      "folder": "7cc148f3-3d18-4595-8f39-eb46ab1eea58",
+      "id": "42a2c268-ed78-4b6c-8974-f7bdbb6973d6",
+      "name": "FetchApplication",
+      "dataDisabled": false,
+      "descriptionFormat": "markdown",
+      "description": "Retrieves existing application data.",
+      "headers": "externalRefId:3fcb1437-4e52-4946-9ae1-e618351b6d16\r\nv-correlation-id:3fcb1437-4e52-4946-9ae1-e618351b6d16\r\nAccept:application/json\r\n",
+      "method": "GET",
+      "pathVariables": {},
+      "url": "{{default}}/applications",
+      "responses": [
+        {
+          "request": "42a2c268-ed78-4b6c-8974-f7bdbb6973d6",
+          "id": "e5a9b282-b0f3-4433-8006-14005498603b",
+          "name": "Response_200",
+          "status": "Success",
+          "responseCode": {
+            "code": 200,
+            "name": "200",
+            "detail": "Success"
+          },
+          "headers": [
+            {
+              "name": "v-correlation-id",
+              "key": "v-correlation-id",
+              "value": "3fcb1437-4e52-4946-9ae1-e618351b6d16",
+              "description": "Unique transaction Id. Will be generated if not provided and returned in response headers."
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "mime": "application/json",
+          "text": "{\r\n  \"externalRefId\": \"df8a6d82-3bb4-4f3b-ba18-57a5981ede8e\",\r\n  \"businessInfo\": {\r\n    \"dbaName\": \"The DBA Name\",\r\n    \"legalName\": \"Timothy Jones\",\r\n    \"ownershipType\": \"LLC\",\r\n    \"mccCode\": \"5812\",\r\n    \"businessEstablishedDate\": \"2000-03-23\",\r\n    \"websiteUrl\": \"www.thefoodplace.com\",\r\n    \"numberOfLocation\": 2,\r\n    \"federalTaxId\": \"123456789\",\r\n    \"paymentAcceptanceMethod\": [\r\n      \"inPerson\",\r\n      \"onlineSite\"\r\n    ],\r\n    \"pciadc\": \"No\",\r\n    \"pcidssValidated\": \"No\",\r\n    \"surroundingArea\": \"Commercial\",\r\n    \"productServiceSold\": \"Food\",\r\n    \"ownAddYears\": 2,\r\n    \"lengthOfContract\": \"lengthOfContract89\",\r\n    \"seasonal\": \"Yes\",\r\n    \"activeMonths\": [\r\n      \"Jan\",\r\n      \"Feb\",\r\n      \"Mar\"\r\n    ],\r\n    \"warranty\": \"1 YEAR\",\r\n    \"returnPolicy\": \"30 Day\",\r\n    \"taxExempt\": \"true\",\r\n    \"acceptCreditCards\": \"true\"\r\n  },\r\n  \"transactionInfo\": {\r\n    \"annualSalesVolume\": 20000.12,\r\n    \"percentRetailSwipedTransactions\": 82,\r\n    \"averageTicket\": 2.3,\r\n    \"highestTicket\": 32.41,\r\n    \"currentProcessor\": \"Global Payments\",\r\n    \"acceptChargebacks\": \"No\",\r\n    \"chargebackPercent\": 0,\r\n    \"returnPercent\": 10,\r\n    \"cardNotPresentPercent\": 20,\r\n    \"businessToBusinessPercent\": 20,\r\n    \"internetTransactionPercent\": 10,\r\n    \"annualCreditSalesVolume\": 123.32,\r\n    \"annualDebitSalesVolume\": 32.23,\r\n    \"annualAmexVolume\": 10000,\r\n    \"amexAverageTicket\": 2.3,\r\n    \"averageNumberofDays\": 10\r\n  },\r\n  \"leadSource\": \"Activate\",\r\n  \"owners\": [\r\n    {\r\n      \"type\": \"Owner 3 Contact\",\r\n      \"firstName\": \"Todd\",\r\n      \"lastName\": \"Davis\",\r\n      \"phoneNumber\": \"5131234567\",\r\n      \"email\": \"test@gmail.com\",\r\n      \"addressLine1\": \"4355 N Coalwhipe St.\",\r\n      \"city\": \"Denver\",\r\n      \"state\": \"CO\",\r\n      \"country\": \"United States\",\r\n      \"postalCode\": \"12345\",\r\n      \"title\": \"President\",\r\n      \"middleInitial\": \"M\",\r\n      \"phoneNumberExt\": \"1234\",\r\n      \"phoneType\": \"mobile\",\r\n      \"alternatePhone\": \"5131234567\",\r\n      \"alternatePhoneType\": \"home\",\r\n      \"faxNumber\": \"5131234567\",\r\n      \"ownershipPercentage\": 87,\r\n      \"ssn\": \"123456789\",\r\n      \"dob\": \"2000-03-23\",\r\n      \"addressLine2\": \"suite 104\",\r\n      \"postalCodeExtension\": \"1234\",\r\n      \"identification\": [\r\n        {\r\n          \"idType\": \"PASSPORT\",\r\n          \"idNumber\": \"312312341\",\r\n          \"issuedCity\": \"City Town\",\r\n          \"issuedState\": \"CO\",\r\n          \"issuedCountry\": \"US\",\r\n          \"dateIssued\": \"1999-01-30\",\r\n          \"dateExpires\": \"2020-02-11\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"guarantors\": [\r\n    {\r\n      \"type\": \"Guarantor 1 Contact\",\r\n      \"firstName\": \"Todd\",\r\n      \"lastName\": \"Davis\",\r\n      \"phoneNumber\": \"5131234567\",\r\n      \"email\": \"test@gmail.com\",\r\n      \"addressLine1\": \"4355 N Coalwhipe St.\",\r\n      \"city\": \"Denver\",\r\n      \"state\": \"CO\",\r\n      \"country\": \"United States\",\r\n      \"postalCode\": \"12345\",\r\n      \"title\": \"President\",\r\n      \"middleInitial\": \"M\",\r\n      \"phoneNumberExt\": \"1234\",\r\n      \"phoneType\": \"mobile\",\r\n      \"alternatePhone\": \"5131234567\",\r\n      \"alternatePhoneType\": \"home\",\r\n      \"faxNumber\": \"5131234567\",\r\n      \"ownershipPercentage\": 65,\r\n      \"ssn\": \"123456789\",\r\n      \"dob\": \"2000-03-23\",\r\n      \"addressLine2\": \"suite 104\",\r\n      \"postalCodeExtension\": \"1234\",\r\n      \"identification\": [\r\n        {\r\n          \"idType\": \"PASSPORT\",\r\n          \"idNumber\": \"312312341\",\r\n          \"issuedCity\": \"City Town\",\r\n          \"issuedState\": \"CO\",\r\n          \"issuedCountry\": \"US\",\r\n          \"dateIssued\": \"1999-01-30\",\r\n          \"dateExpires\": \"2020-02-11\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"authorizedSigners\": [\r\n    {\r\n      \"roleName\": \"Merchant\",\r\n      \"signingExperience\": \"email\",\r\n      \"signingOrder\": \"2\",\r\n      \"firstName\": \"Todd\",\r\n      \"lastName\": \"Davis\",\r\n      \"phoneNumber\": \"5131234567\",\r\n      \"email\": \"test@gmail.com\",\r\n      \"ssn\": \"123456789\",\r\n      \"dob\": \"2000-03-23\",\r\n      \"addressLine1\": \"4355 N Coalwhipe St.\",\r\n      \"city\": \"Denver\",\r\n      \"state\": \"CO\",\r\n      \"country\": \"United States\",\r\n      \"postalCode\": \"12345\",\r\n      \"title\": \"President\",\r\n      \"middleInitial\": \"M\",\r\n      \"phoneNumberExt\": \"1234\",\r\n      \"phoneType\": \"mobile\",\r\n      \"alternatePhone\": \"5131234567\",\r\n      \"alternatePhoneType\": \"home\",\r\n      \"faxNumber\": \"5131234567\",\r\n      \"addressLine2\": \"suite 104\",\r\n      \"postalCodeExtension\": \"1234\",\r\n      \"identification\": [\r\n        {\r\n          \"idType\": \"PASSPORT\",\r\n          \"idNumber\": \"312312341\",\r\n          \"issuedCity\": \"City Town\",\r\n          \"issuedState\": \"CO\",\r\n          \"issuedCountry\": \"US\",\r\n          \"dateIssued\": \"1999-01-30\",\r\n          \"dateExpires\": \"2020-02-11\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"contacts\": [\r\n    {\r\n      \"type\": \"Primary Contact\",\r\n      \"firstName\": \"Todd\",\r\n      \"lastName\": \"Davis\",\r\n      \"phoneNumber\": \"5131234567\",\r\n      \"email\": \"test@gmail.com\",\r\n      \"title\": \"President\",\r\n      \"middleInitial\": \"M\",\r\n      \"ssn\": \"123456789\",\r\n      \"birthDate\": \"2000-03-23\",\r\n      \"phoneNumberExt\": \"1234\",\r\n      \"phoneType\": \"mobile\",\r\n      \"alternatePhone\": \"5131234567\",\r\n      \"alternatePhoneType\": \"home\",\r\n      \"faxNumber\": \"5131234567\"\r\n    }\r\n  ],\r\n  \"addresses\": [\r\n    {\r\n      \"type\": \"Physical Address\",\r\n      \"addressLine1\": \"4355 N Coalwhipe St.\",\r\n      \"city\": \"Denver\",\r\n      \"state\": \"CO\",\r\n      \"country\": \"United States\",\r\n      \"postalCode\": \"12345\",\r\n      \"addressLine2\": \"suite 104\",\r\n      \"postalCodeExtension\": \"1234\"\r\n    }\r\n  ],\r\n  \"bankAccount\": {\r\n    \"ddaType\": \"Checking\",\r\n    \"achType\": \"Commercial Checking\",\r\n    \"accountNumber\": \"011401545\",\r\n    \"routingNumber\": \"102000076\",\r\n    \"bankName\": \"Bank name\"\r\n  },\r\n  \"salesAgent\": {\r\n    \"firstName\": \"John\",\r\n    \"lastName\": \"Doe\",\r\n    \"email\": \"email96\",\r\n    \"id\": \"U15315\",\r\n    \"mobilePhoneNumber\": \"1234567890\"\r\n  },\r\n  \"installationContact\": {\r\n    \"firstName\": \"Sam\",\r\n    \"lastName\": \"Doe\",\r\n    \"email\": \"email34\",\r\n    \"id\": \"U15318\",\r\n    \"mobilePhoneNumber\": \"1234567890\"\r\n  },\r\n  \"routeToSalesRep\": false\r\n}",
+          "language": "Text",
+          "rawDataType": "text"
+        }
+      ],
+      "collectionId": "908b3917-57a8-45ce-82bf-6e093021d200",
+      "queryParams": [],
+      "headerData": [
+        {
+          "key": "externalRefId",
+          "value": "3fcb1437-4e52-4946-9ae1-e618351b6d16",
+          "description": "The externalRefId returned from POST /applications call."
+        },
+        {
+          "key": "v-correlation-id",
+          "value": "3fcb1437-4e52-4946-9ae1-e618351b6d16",
+          "description": "Unique transaction Id. Will be generated if not provided and returned in response headers."
+        },
+        {
+          "key": "Accept",
+          "value": "application/json"
+        }
+      ],
+      "pathVariableData": []
+    },
+    {
+      "folder": "72d38d19-aeb7-437e-a136-98fb58ac2173",
+      "id": "d6a5069e-421b-400a-9a76-f0f5eb37fb86",
+      "name": "GetAdditionalConfigurations",
+      "dataDisabled": false,
+      "descriptionFormat": "markdown",
+      "description": "Fetches a list of valid terminal customizations and peripherals, such as electing to password protect a void.",
+      "headers": "externalRefId:3fcb1437-4e52-4946-9ae1-e618351b6d16\r\nv-correlation-id:3fcb1437-4e52-4946-9ae1-e618351b6d16\r\nlogicalApplicationId:1073\r\nAccept:application/json\r\n",
+      "method": "GET",
+      "pathVariables": {},
+      "url": "{{default}}/terminal/additional-configurations",
+      "responses": [
+        {
+          "request": "d6a5069e-421b-400a-9a76-f0f5eb37fb86",
+          "id": "c66659f8-77f6-4f2c-980d-01c50f9e0a69",
+          "name": "Response_200",
+          "status": "Response is a list of valid terminal configurations.",
+          "responseCode": {
+            "code": 200,
+            "name": "200",
+            "detail": "Response is a list of valid terminal configurations."
+          },
+          "headers": [
+            {
+              "name": "v-correlation-id",
+              "key": "v-correlation-id",
+              "value": "3fcb1437-4e52-4946-9ae1-e618351b6d16",
+              "description": "Unique transaction Id. Will be generated if not provided and returned in response headers."
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "mime": "application/json",
+          "text": "{\r\n  \"customizations\": [\r\n    {\r\n      \"customizationId\": \"1\",\r\n      \"customizationType\": \"time\",\r\n      \"useProductMatrix\": \"N\",\r\n      \"productId\": \"12\",\r\n      \"code\": \"CST01\",\r\n      \"customizationCodeDetails\": [\r\n        {\r\n          \"value\": \"H\",\r\n          \"shortDescription\": \"Host Auto Close\",\r\n          \"longDescription\": \"Host Auto Close\"\r\n        }\r\n      ],\r\n      \"customizationValue\": \"H\",\r\n      \"customizationFieldLength\": \"1\",\r\n      \"customizationDecimalPlace\": \"0\",\r\n      \"customizationMinValue\": \"0\",\r\n      \"customizationMaxValue\": \"6\",\r\n      \"charactersAllowed\": \"abcdefghijklmnopqrstuvwxyz\",\r\n      \"rule\": \"rule77\",\r\n      \"regex\": \"^[a-z]{1}\",\r\n      \"multiMerchantFlag\": false,\r\n      \"shortDescription\": \"CVV_PROMPTING\",\r\n      \"longDescription\": \"CVV_PROMPTING\"\r\n    }\r\n  ],\r\n  \"peripherals\": [\r\n    {\r\n      \"peripheralId\": \"35\",\r\n      \"model\": \"Pin Pad 1000 SE\",\r\n      \"shortDescription\": \"PP1S\",\r\n      \"longDescription\": \"PPAD\",\r\n      \"isEMVCertified\": true,\r\n      \"isEMVCapable\": true,\r\n      \"activePeripheralFlag\": \"Y\",\r\n      \"purchasePrice\": \"168.12\",\r\n      \"leasePrice\": \"100.12\",\r\n      \"rentalPrice\": \"90\",\r\n      \"hardwareCost\": \"50.75\"\r\n    }\r\n  ]\r\n}",
+          "language": "Text",
+          "rawDataType": "text"
+        }
+      ],
+      "collectionId": "908b3917-57a8-45ce-82bf-6e093021d200",
+      "queryParams": [],
+      "headerData": [
+        {
+          "key": "externalRefId",
+          "value": "3fcb1437-4e52-4946-9ae1-e618351b6d16",
+          "description": "The externalRefId returned from POST /applications call."
+        },
+        {
+          "key": "v-correlation-id",
+          "value": "3fcb1437-4e52-4946-9ae1-e618351b6d16",
+          "description": "Unique transaction Id. Will be generated if not provided and returned in response headers."
+        },
+        {
+          "key": "logicalApplicationId",
+          "value": "1073",
+          "description": "Logical App ID of the terminal."
+        },
+        {
+          "key": "Accept",
+          "value": "application/json"
+        }
+      ],
+      "pathVariableData": []
+    },
+    {
+      "folder": "72d38d19-aeb7-437e-a136-98fb58ac2173",
+      "id": "83265e01-c546-4e17-b3d9-7b563e259d52",
+      "name": "GetEquipmentSupported",
+      "dataDisabled": false,
+      "descriptionFormat": "markdown",
+      "description": "Retrieve applicable equipment for an existing application.",
+      "headers": "externalRefId:3fcb1437-4e52-4946-9ae1-e618351b6d16\r\nv-correlation-id:3fcb1437-4e52-4946-9ae1-e618351b6d16\r\nAccept:application/json\r\n",
+      "method": "GET",
+      "pathVariables": {},
+      "url": "{{default}}/equipment/supported",
+      "responses": [
+        {
+          "request": "83265e01-c546-4e17-b3d9-7b563e259d52",
+          "id": "33bf0b69-d0bb-4b2f-a26a-acd7a5fa79ef",
+          "name": "Response_200",
+          "status": "Success",
+          "responseCode": {
+            "code": 200,
+            "name": "200",
+            "detail": "Success"
+          },
+          "headers": [
+            {
+              "name": "v-correlation-id",
+              "key": "v-correlation-id",
+              "value": "3fcb1437-4e52-4946-9ae1-e618351b6d16",
+              "description": "Unique transaction Id. Will be generated if not provided and returned in response headers."
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "mime": "application/json",
+          "text": "{\r\n  \"equipment\": [\r\n    {\r\n      \"id\": \"1\",\r\n      \"name\": \"Verifone LX570\",\r\n      \"logicalApplicationId\": \"1073\",\r\n      \"environment\": \"Retail\"\r\n    }\r\n  ]\r\n}",
+          "language": "Text",
+          "rawDataType": "text"
+        }
+      ],
+      "collectionId": "908b3917-57a8-45ce-82bf-6e093021d200",
+      "queryParams": [],
+      "headerData": [
+        {
+          "key": "externalRefId",
+          "value": "3fcb1437-4e52-4946-9ae1-e618351b6d16",
+          "description": "The externalRefId returned from POST /applications call."
+        },
+        {
+          "key": "v-correlation-id",
+          "value": "3fcb1437-4e52-4946-9ae1-e618351b6d16",
+          "description": "Unique transaction Id. Will be generated if not provided and returned in response headers."
+        },
+        {
+          "key": "Accept",
+          "value": "application/json"
+        }
+      ],
+      "pathVariableData": []
+    },
+    {
+      "folder": "2fa52e69-548c-4bf7-970a-83e17c92b62b",
+      "id": "64dc2fd2-f4e2-4506-9c85-1549daada047",
+      "name": "GetTerminalInfo",
+      "dataDisabled": false,
+      "descriptionFormat": "markdown",
+      "description": "Gets the terminal configuration information for a specific partner.",
+      "headers": "externalRefId:3fcb1437-4e52-4946-9ae1-e618351b6d16\r\nv-correlation-id:3fcb1437-4e52-4946-9ae1-e618351b6d16\r\nContent-Type:application/json\r\nlocationId:locationId22\r\nmerchantId:merchantId28\r\nAccept:application/json\r\n",
+      "method": "GET",
+      "pathVariables": {},
+      "url": "{{default}}/equipment/terminal-var",
+      "responses": [
+        {
+          "request": "64dc2fd2-f4e2-4506-9c85-1549daada047",
+          "id": "ce51bb0e-5acf-472f-aa38-d145a03bfcf4",
+          "name": "Response_200",
+          "status": "Success",
+          "responseCode": {
+            "code": 200,
+            "name": "200",
+            "detail": "Success"
+          },
+          "headers": [
+            {
+              "name": "v-correlation-id",
+              "key": "v-correlation-id",
+              "value": "3fcb1437-4e52-4946-9ae1-e618351b6d16",
+              "description": "Unique transaction Id. Will be generated if not provided and returned in response headers."
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "mime": "application/json",
+          "text": "{\r\n  \"shippingOption\": \"next day\",\r\n  \"terminals\": [\r\n    {\r\n      \"terminalConfigs\": {\r\n        \"terminalId\": \"iCT220\",\r\n        \"price\": 187.99,\r\n        \"quantity\": 1,\r\n        \"logicalApplicationId\": \"MONE510\",\r\n        \"accessMethod\": \"SSL\",\r\n        \"paymentMethod\": \"PURCHASE / SALE\",\r\n        \"environmentName\": \"Retail\",\r\n        \"requestId\": \"41231\",\r\n        \"terminalModel\": \"Ingenico iCT220 CTLS 3.X Dial\",\r\n        \"isVar\": false,\r\n        \"emvCapable\": true,\r\n        \"leaseId\": \"12\",\r\n        \"leaseTermLength\": \"24\",\r\n        \"terminalSequenceNumber\": \"14\",\r\n        \"specialCustomizations\": \"Mulitple merchant setup is Yes\"\r\n      },\r\n      \"products\": [\r\n        {\r\n          \"productId\": \"1\",\r\n          \"productName\": \"Debit\"\r\n        }\r\n      ],\r\n      \"customizations\": [\r\n        {\r\n          \"customizationId\": \"10\",\r\n          \"customizationName\": \"Auto-Close Time\",\r\n          \"customizationFieldValue\": \"N\"\r\n        }\r\n      ],\r\n      \"peripherals\": [\r\n        {\r\n          \"peripheralId\": \"231\",\r\n          \"peripheralType\": \"PPAD\",\r\n          \"model\": \"Magtek Check Reader\",\r\n          \"leaseId\": \"18\",\r\n          \"leaseTermLength\": \"24\",\r\n          \"paymentMethod\": \"PURCHASE / SALE\",\r\n          \"amount\": \"220.21\",\r\n          \"paymentConfirmationNumber\": \"123456\"\r\n        }\r\n      ],\r\n      \"vendors\": [\r\n        {\r\n          \"paymentApplicationId\": \"9\",\r\n          \"paymentApplicationName\": \"PurchaseExpress\",\r\n          \"vendorId\": \"4\",\r\n          \"version\": \"1\",\r\n          \"reseller\": \"Agilysys Inc\",\r\n          \"lastUpgradeDate\": \"2012-02-18T00:00:00Z\",\r\n          \"notes\": \"Paymetric Gateway v3\"\r\n        }\r\n      ],\r\n      \"gateways\": [\r\n        {\r\n          \"gatewayId\": \"15\",\r\n          \"gatewayName\": \"Paymetric Gateway\",\r\n          \"notes\": \"Paymetric Gateway v3\"\r\n        }\r\n      ],\r\n      \"supply\": [\r\n        {\r\n          \"supplyType\": \"supplyType10\",\r\n          \"name\": \"name37\",\r\n          \"quantity\": 2,\r\n          \"total\": \"220.21\"\r\n        }\r\n      ],\r\n      \"deployment\": {\r\n        \"equipmentUpdateDeploy\": \"M\",\r\n        \"terminalBuildFlag\": true,\r\n        \"frontEndBuildFlag\": true,\r\n        \"sicMerchantFlag\": false,\r\n        \"specialInstructions\": \"Retail - H52460A (SP)\"\r\n      }\r\n    }\r\n  ]\r\n}",
+          "language": "Text",
+          "rawDataType": "text"
+        }
+      ],
+      "collectionId": "908b3917-57a8-45ce-82bf-6e093021d200",
+      "queryParams": [],
+      "headerData": [
+        {
+          "key": "externalRefId",
+          "value": "3fcb1437-4e52-4946-9ae1-e618351b6d16",
+          "description": "The externalRefId returned from POST /applications call."
+        },
+        {
+          "key": "v-correlation-id",
+          "value": "3fcb1437-4e52-4946-9ae1-e618351b6d16",
+          "description": "Unique transaction Id. Will be generated if not provided and returned in response headers."
+        },
+        {
+          "key": "Content-Type",
+          "value": "application/json",
+          "description": "Indicates the media type of the request-body. Accepts application/json."
+        },
+        {
+          "key": "locationId",
+          "value": "locationId22",
+          "description": "The locationId returned from POST /locations call."
+        },
+        {
+          "key": "merchantId",
+          "value": "merchantId28",
+          "description": "The merchantId returned from POST /merchants call."
+        },
+        {
+          "key": "Accept",
+          "value": "application/json"
+        }
+      ],
+      "pathVariableData": []
+    },
+    {
+      "folder": "2fa52e69-548c-4bf7-970a-83e17c92b62b",
+      "id": "c4d43af9-6b6b-41da-a5c3-81f5f4cda3a0",
+      "name": "UpdateTerminal",
+      "dataMode": "raw",
+      "dataDisabled": false,
+      "descriptionFormat": "markdown",
+      "description": "Updates terminal configurations.",
+      "headers": "externalRefId:3fcb1437-4e52-4946-9ae1-e618351b6d16\r\nv-correlation-id:3fcb1437-4e52-4946-9ae1-e618351b6d16\r\nContent-Type:application/json\r\nlocationId:locationId49\r\nmerchantId:merchantId16\r\nAccept:application/json\r\n",
+      "method": "PUT",
+      "pathVariables": {},
+      "url": "{{default}}/equipment/terminal-var",
+      "responses": [
+        {
+          "request": "c4d43af9-6b6b-41da-a5c3-81f5f4cda3a0",
+          "id": "b414b521-912e-4c22-9eb7-14891704f2fd",
+          "name": "Response_200",
+          "status": "Success",
+          "responseCode": {
+            "code": 200,
+            "name": "200",
+            "detail": "Success"
+          },
+          "headers": [
+            {
+              "name": "v-correlation-id",
+              "key": "v-correlation-id",
+              "value": "3fcb1437-4e52-4946-9ae1-e618351b6d16",
+              "description": "Unique transaction Id. Will be generated if not provided and returned in response headers."
+            }
+          ],
+          "language": "Text"
+        }
+      ],
+      "rawModeData": "{\"shippingOption\":\"next day\",\"terminals\":[{\"terminalConfigs\":{\"requestId\":\"41231\",\"terminalId\":\"67\",\"terminalModel\":\"VAR - Xpient Solutions\",\"price\":187.99,\"quantity\":1,\"logicalApplicationId\":\"194\",\"accessMethod\":\"SSL\",\"paymentMethod\":\"PURCHASE / SALE\",\"environmentName\":\"Restaurant\"},\"products\":[{\"productId\":\"1\",\"productName\":\"Credit\"}]}]}",
+      "collectionId": "908b3917-57a8-45ce-82bf-6e093021d200",
+      "queryParams": [],
+      "headerData": [
+        {
+          "key": "externalRefId",
+          "value": "3fcb1437-4e52-4946-9ae1-e618351b6d16",
+          "description": "The externalRefId returned from POST /applications call."
+        },
+        {
+          "key": "v-correlation-id",
+          "value": "3fcb1437-4e52-4946-9ae1-e618351b6d16",
+          "description": "Unique transaction Id. Will be generated if not provided and returned in response headers."
+        },
+        {
+          "key": "Content-Type",
+          "value": "application/json",
+          "description": "Indicates the media type of the request-body. Accepts application/json."
+        },
+        {
+          "key": "locationId",
+          "value": "locationId49",
+          "description": "The locationId returned from POST /locations call."
+        },
+        {
+          "key": "merchantId",
+          "value": "merchantId16",
+          "description": "The merchantId returned from POST /merchants call."
+        },
+        {
+          "key": "Accept",
+          "value": "application/json"
+        }
+      ],
+      "pathVariableData": []
+    },
+    {
+      "folder": "2fa52e69-548c-4bf7-970a-83e17c92b62b",
+      "id": "fbf7310a-a6c2-4e90-9b60-fe5987c3fe23",
+      "name": "ConfigStandaloneTerminal",
+      "dataMode": "raw",
+      "dataDisabled": false,
+      "descriptionFormat": "markdown",
+      "description": "Sets up terminal configurations.",
+      "headers": "externalRefId:3fcb1437-4e52-4946-9ae1-e618351b6d16\r\nv-correlation-id:3fcb1437-4e52-4946-9ae1-e618351b6d16\r\nContent-Type:application/json\r\nlocationId:locationId14\r\nmerchantId:merchantId3\r\nAccept:application/json\r\n",
+      "method": "POST",
+      "pathVariables": {},
+      "url": "{{default}}/equipment/terminal-var",
+      "responses": [
+        {
+          "request": "fbf7310a-a6c2-4e90-9b60-fe5987c3fe23",
+          "id": "615bd542-7bc3-4165-9fbd-9708b2960ef5",
+          "name": "Response_200",
+          "status": "Success",
+          "responseCode": {
+            "code": 200,
+            "name": "200",
+            "detail": "Success"
+          },
+          "headers": [
+            {
+              "name": "v-correlation-id",
+              "key": "v-correlation-id",
+              "value": "3fcb1437-4e52-4946-9ae1-e618351b6d16",
+              "description": "Unique transaction Id. Will be generated if not provided and returned in response headers."
+            }
+          ],
+          "language": "Text"
+        }
+      ],
+      "rawModeData": "{\"shippingOption\":\"next day\",\"terminals\":[{\"terminalConfigs\":{\"requestId\":\"41231\",\"terminalId\":\"67\",\"terminalModel\":\"VAR - Xpient Solutions\",\"price\":187.99,\"quantity\":1,\"logicalApplicationId\":\"194\",\"accessMethod\":\"SSL\",\"paymentMethod\":\"PURCHASE / SALE\",\"environmentName\":\"Restaurant\"},\"products\":[{\"productId\":\"1\",\"productName\":\"Credit\"}]}]}",
+      "collectionId": "908b3917-57a8-45ce-82bf-6e093021d200",
+      "queryParams": [],
+      "headerData": [
+        {
+          "key": "externalRefId",
+          "value": "3fcb1437-4e52-4946-9ae1-e618351b6d16",
+          "description": "The externalRefId returned from POST /applications call."
+        },
+        {
+          "key": "v-correlation-id",
+          "value": "3fcb1437-4e52-4946-9ae1-e618351b6d16",
+          "description": "Unique transaction Id. Will be generated if not provided and returned in response headers."
+        },
+        {
+          "key": "Content-Type",
+          "value": "application/json",
+          "description": "Indicates the media type of the request-body. Accepts application/json."
+        },
+        {
+          "key": "locationId",
+          "value": "locationId14",
+          "description": "The locationId returned from POST /locations call."
+        },
+        {
+          "key": "merchantId",
+          "value": "merchantId3",
+          "description": "The merchantId returned from POST /merchants call."
+        },
+        {
+          "key": "Accept",
+          "value": "application/json"
+        }
+      ],
+      "pathVariableData": []
+    },
+    {
+      "folder": "919be66a-15dc-4fdb-974b-ce30e3f2cf18",
+      "id": "82b9399c-3a1f-4974-952e-ac11621f239d",
+      "name": "validateBoard",
+      "dataDisabled": false,
+      "descriptionFormat": "markdown",
+      "description": "Begins the merchant validation process before boarding after all necessary information has been submitted to the API. Please see the reference guide for specific boarding requirements.",
+      "headers": "externalRefId:3fcb1437-4e52-4946-9ae1-e618351b6d16\r\nv-correlation-id:3fcb1437-4e52-4946-9ae1-e618351b6d16\r\nContent-Type:application/json\r\nAccept:application/json\r\n",
+      "method": "PUT",
+      "pathVariables": {},
+      "url": "{{default}}/applications/validate",
+      "responses": [
+        {
+          "request": "82b9399c-3a1f-4974-952e-ac11621f239d",
+          "id": "a89b085c-cf0f-41e9-b18c-d7acadb8eade",
+          "name": "Response_200",
+          "status": "Success",
+          "responseCode": {
+            "code": 200,
+            "name": "200",
+            "detail": "Success"
+          },
+          "headers": [
+            {
+              "name": "v-correlation-id",
+              "key": "v-correlation-id",
+              "value": "3fcb1437-4e52-4946-9ae1-e618351b6d16",
+              "description": "Unique transaction Id. Will be generated if not provided and returned in response headers."
+            }
+          ],
+          "language": "Text"
+        }
+      ],
+      "collectionId": "908b3917-57a8-45ce-82bf-6e093021d200",
+      "queryParams": [],
+      "headerData": [
+        {
+          "key": "externalRefId",
+          "value": "3fcb1437-4e52-4946-9ae1-e618351b6d16",
+          "description": "The externalRefId returned from POST /applications call."
+        },
+        {
+          "key": "v-correlation-id",
+          "value": "3fcb1437-4e52-4946-9ae1-e618351b6d16",
+          "description": "Unique transaction Id. Will be generated if not provided and returned in response headers."
+        },
+        {
+          "key": "Content-Type",
+          "value": "application/json",
+          "description": "Indicates the media type of the request-body. Accepts application/json."
+        },
+        {
+          "key": "Accept",
+          "value": "application/json"
+        }
+      ],
+      "pathVariableData": []
+    },
+    {
+      "folder": "919be66a-15dc-4fdb-974b-ce30e3f2cf18",
+      "id": "ddba518a-e007-4b50-a00c-a69b8f589c04",
+      "name": "InititateBoard",
+      "dataDisabled": false,
+      "descriptionFormat": "markdown",
+      "description": "Begins the merchant boarding process after all necessary information has been submitted to the API. Please see the reference guide for specific boarding requirements.",
+      "headers": "externalRefId:3fcb1437-4e52-4946-9ae1-e618351b6d16\r\nv-correlation-id:3fcb1437-4e52-4946-9ae1-e618351b6d16\r\nContent-Type:application/json\r\nthreatmetrixId:threatmetrixId9\r\nAccept:application/json\r\n",
+      "method": "PUT",
+      "pathVariables": {},
+      "url": "{{default}}/applications/board",
+      "responses": [
+        {
+          "request": "ddba518a-e007-4b50-a00c-a69b8f589c04",
+          "id": "d9b6f389-4ab3-4e41-99e3-759f8a4d5f41",
+          "name": "Response_200",
+          "status": "Success",
+          "responseCode": {
+            "code": 200,
+            "name": "200",
+            "detail": "Success"
+          },
+          "headers": [
+            {
+              "name": "v-correlation-id",
+              "key": "v-correlation-id",
+              "value": "3fcb1437-4e52-4946-9ae1-e618351b6d16",
+              "description": "Unique transaction Id. Will be generated if not provided and returned in response headers."
+            }
+          ],
+          "language": "Text"
+        }
+      ],
+      "collectionId": "908b3917-57a8-45ce-82bf-6e093021d200",
+      "queryParams": [],
+      "headerData": [
+        {
+          "key": "externalRefId",
+          "value": "3fcb1437-4e52-4946-9ae1-e618351b6d16",
+          "description": "The externalRefId returned from POST /applications call."
+        },
+        {
+          "key": "v-correlation-id",
+          "value": "3fcb1437-4e52-4946-9ae1-e618351b6d16",
+          "description": "Unique transaction Id. Will be generated if not provided and returned in response headers."
+        },
+        {
+          "key": "Content-Type",
+          "value": "application/json",
+          "description": "Indicates the media type of the request-body. Accepts application/json."
+        },
+        {
+          "key": "threatmetrixId",
+          "value": "threatmetrixId9",
+          "description": "A unique session id"
+        },
+        {
+          "key": "Accept",
+          "value": "application/json"
+        }
+      ],
+      "pathVariableData": []
+    },
+    {
+      "folder": "fd1ededd-f3b9-4cd2-8f9f-eb131eda0cf2",
+      "id": "179717f2-48c0-4dbc-a338-e23195ef8d20",
+      "name": "GetApplicationStatus",
+      "dataDisabled": false,
+      "descriptionFormat": "markdown",
+      "description": "Retrieves the status of a contract when passed with an externalRefID. Both the externalRefID and authorization header are required.",
+      "headers": "externalRefId:3fcb1437-4e52-4946-9ae1-e618351b6d16\r\nv-correlation-id:3fcb1437-4e52-4946-9ae1-e618351b6d16\r\nAccept:application/json\r\n",
+      "method": "GET",
+      "pathVariables": {},
+      "url": "{{default}}/applications/status",
+      "responses": [
+        {
+          "request": "179717f2-48c0-4dbc-a338-e23195ef8d20",
+          "id": "cca5d0ad-6ccd-4929-9909-5a488adadc2f",
+          "name": "Response_200",
+          "status": "Success\n\nApplicationStatus gives following Information,\n\n- 'contractStatus' - Current status of contract processing.\n\n- 'description' - Detailed description of the contractStatus.",
+          "responseCode": {
+            "code": 200,
+            "name": "200",
+            "detail": "Success\n\nApplicationStatus gives following Information,\n\n- 'contractStatus' - Current status of contract processing.\n\n- 'description' - Detailed description of the contractStatus."
+          },
+          "headers": [
+            {
+              "name": "v-correlation-id",
+              "key": "v-correlation-id",
+              "value": "3fcb1437-4e52-4946-9ae1-e618351b6d16",
+              "description": "Unique transaction Id. Will be generated if not provided and returned in response headers."
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "mime": "application/json",
+          "text": "{\r\n  \"externalRefId\": \"df8a6d82-3bb4-4f3b-ba18-57a5981ede8e\",\r\n  \"contractStatus\": \"Error\",\r\n  \"description\": \"description3\",\r\n  \"pendedReason\": \"pendedReason70\"\r\n}",
+          "language": "Text",
+          "rawDataType": "text"
+        }
+      ],
+      "collectionId": "908b3917-57a8-45ce-82bf-6e093021d200",
+      "queryParams": [],
+      "headerData": [
+        {
+          "key": "externalRefId",
+          "value": "3fcb1437-4e52-4946-9ae1-e618351b6d16",
+          "description": "The externalRefId returned from POST /applications call."
+        },
+        {
+          "key": "v-correlation-id",
+          "value": "3fcb1437-4e52-4946-9ae1-e618351b6d16",
+          "description": "Unique transaction Id. Will be generated if not provided and returned in response headers."
+        },
+        {
+          "key": "Accept",
+          "value": "application/json"
+        }
+      ],
+      "pathVariableData": []
+    },
+    {
+      "folder": "fd1ededd-f3b9-4cd2-8f9f-eb131eda0cf2",
+      "id": "2040b7cd-d40b-44f7-82e8-fca8027c52d4",
+      "name": "fetchSignerStatus",
+      "dataDisabled": false,
+      "descriptionFormat": "markdown",
+      "description": "Use this endpoint to get signer status",
+      "headers": "externalRefId:3fcb1437-4e52-4946-9ae1-e618351b6d16\r\nv-correlation-id:3fcb1437-4e52-4946-9ae1-e618351b6d16\r\nContent-Type:application/json\r\nAccept:application/json\r\n",
+      "method": "GET",
+      "pathVariables": {},
+      "url": "{{default}}/applications/status/signers",
+      "responses": [
+        {
+          "request": "2040b7cd-d40b-44f7-82e8-fca8027c52d4",
+          "id": "80bd5ba7-78c4-4415-9e37-89897912e6c0",
+          "name": "Response_200",
+          "status": "Success",
+          "responseCode": {
+            "code": 200,
+            "name": "200",
+            "detail": "Success"
+          },
+          "headers": [
+            {
+              "name": "v-correlation-id",
+              "key": "v-correlation-id",
+              "value": "3fcb1437-4e52-4946-9ae1-e618351b6d16",
+              "description": "Unique transaction Id. Will be generated if not provided and returned in response headers."
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "mime": "application/json",
+          "text": "{\r\n  \"externalRefId\": \"df8a6d82-3bb4-4f3b-ba18-57a5981ede8e\",\r\n  \"authorizedSigners\": [\r\n    {\r\n      \"firstName\": \"Todd\",\r\n      \"middleInitial\": \"M\",\r\n      \"lastName\": \"Davis\",\r\n      \"email\": \"test@gmail.com\",\r\n      \"status\": \"sent\",\r\n      \"lastUpdated\": \"2024-03-27T17:47:42.1601324Z\",\r\n      \"dateSubmitted\": \"2024-05-18T17:47:42.1601432Z\",\r\n      \"dateSent\": \"2024-04-27T17:47:42.1601464Z\",\r\n      \"dateDelivered\": \"2024-03-25T17:47:42.1601499Z\",\r\n      \"dateSigned\": \"2024-03-03T17:47:42.160155Z\",\r\n      \"signerRoleName\": \"Merchant\",\r\n      \"signerExperience\": \"wet\"\r\n    }\r\n  ]\r\n}",
+          "language": "Text",
+          "rawDataType": "text"
+        }
+      ],
+      "collectionId": "908b3917-57a8-45ce-82bf-6e093021d200",
+      "queryParams": [],
+      "headerData": [
+        {
+          "key": "externalRefId",
+          "value": "3fcb1437-4e52-4946-9ae1-e618351b6d16",
+          "description": "The externalRefId returned from POST /applications call."
+        },
+        {
+          "key": "v-correlation-id",
+          "value": "3fcb1437-4e52-4946-9ae1-e618351b6d16",
+          "description": "Unique transaction Id. Will be generated if not provided and returned in response headers."
+        },
+        {
+          "key": "Content-Type",
+          "value": "application/json",
+          "description": "Indicates the media type of the request-body. Accepts application/json."
+        },
+        {
+          "key": "Accept",
+          "value": "application/json"
+        }
+      ],
+      "pathVariableData": []
+    },
+    {
+      "folder": "fd1ededd-f3b9-4cd2-8f9f-eb131eda0cf2",
+      "id": "969a1559-cebf-42c5-b2f9-21da6937c9f7",
+      "name": "fetchApplicationStatusHistory",
+      "dataDisabled": false,
+      "descriptionFormat": "markdown",
+      "description": "Use this endpoint to get a application's status history.",
+      "headers": "externalRefId:3fcb1437-4e52-4946-9ae1-e618351b6d16\r\nv-correlation-id:3fcb1437-4e52-4946-9ae1-e618351b6d16\r\nAccept:application/json\r\n",
+      "method": "GET",
+      "pathVariables": {},
+      "url": "{{default}}/applications/status/history",
+      "responses": [
+        {
+          "request": "969a1559-cebf-42c5-b2f9-21da6937c9f7",
+          "id": "1ea0fea5-1029-4875-a4b9-24458c9463a7",
+          "name": "Response_200",
+          "status": "Success",
+          "responseCode": {
+            "code": 200,
+            "name": "200",
+            "detail": "Success"
+          },
+          "headers": [
+            {
+              "name": "v-correlation-id",
+              "key": "v-correlation-id",
+              "value": "3fcb1437-4e52-4946-9ae1-e618351b6d16",
+              "description": "Unique transaction Id. Will be generated if not provided and returned in response headers."
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "mime": "application/json",
+          "text": "{\r\n  \"externalRefId\": \"df8a6d82-3bb4-4f3b-ba18-57a5981ede8e\",\r\n  \"statusHistory\": [\r\n    {\r\n      \"statusSeqNumber\": 2200,\r\n      \"detailStatus\": \"Contract Signed\",\r\n      \"summaryStatus\": \"App Submitted\",\r\n      \"statusCategory\": \"Contract\",\r\n      \"statusDateTime\": \"2024-05-04T17:47:42.1603097Z\"\r\n    }\r\n  ]\r\n}",
+          "language": "Text",
+          "rawDataType": "text"
+        }
+      ],
+      "collectionId": "908b3917-57a8-45ce-82bf-6e093021d200",
+      "queryParams": [],
+      "headerData": [
+        {
+          "key": "externalRefId",
+          "value": "3fcb1437-4e52-4946-9ae1-e618351b6d16",
+          "description": "The externalRefId returned from POST /applications call."
+        },
+        {
+          "key": "v-correlation-id",
+          "value": "3fcb1437-4e52-4946-9ae1-e618351b6d16",
+          "description": "Unique transaction Id. Will be generated if not provided and returned in response headers."
+        },
+        {
+          "key": "Accept",
+          "value": "application/json"
+        }
+      ],
+      "pathVariableData": []
+    },
+    {
+      "folder": "e9e38734-cbc3-4bfb-9ca2-3746d50d81d6",
+      "id": "3ad6fcd0-7a7a-493e-9440-dca787951988",
+      "name": "GetContract",
+      "dataDisabled": false,
+      "descriptionFormat": "markdown",
+      "description": "Returns a PDF contract to be signed.",
+      "headers": "externalRefId:3fcb1437-4e52-4946-9ae1-e618351b6d16\r\nv-correlation-id:3fcb1437-4e52-4946-9ae1-e618351b6d16\r\nAccept:application/pdf,application/json\r\n",
+      "method": "GET",
+      "pathVariables": {},
+      "url": "{{default}}/contracts",
+      "responses": [
+        {
+          "request": "3ad6fcd0-7a7a-493e-9440-dca787951988",
+          "id": "67405d1e-a562-416a-a0d1-64207a0aeddf",
+          "name": "Response_200",
+          "status": "Response is a PDF file.",
+          "responseCode": {
+            "code": 200,
+            "name": "200",
+            "detail": "Response is a PDF file."
+          },
+          "headers": [
+            {
+              "name": "v-correlation-id",
+              "key": "v-correlation-id",
+              "value": "3fcb1437-4e52-4946-9ae1-e618351b6d16",
+              "description": "Unique transaction Id. Will be generated if not provided and returned in response headers."
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/pdf"
+            }
+          ],
+          "mime": "application/pdf",
+          "text": "any",
+          "language": "Text",
+          "rawDataType": "text"
+        }
+      ],
+      "collectionId": "908b3917-57a8-45ce-82bf-6e093021d200",
+      "queryParams": [],
+      "headerData": [
+        {
+          "key": "externalRefId",
+          "value": "3fcb1437-4e52-4946-9ae1-e618351b6d16",
+          "description": "The externalRefId returned from POST /applications call."
+        },
+        {
+          "key": "v-correlation-id",
+          "value": "3fcb1437-4e52-4946-9ae1-e618351b6d16",
+          "description": "Unique transaction Id. Will be generated if not provided and returned in response headers."
+        },
+        {
+          "key": "Accept",
+          "value": "application/pdf,application/json"
+        }
+      ],
+      "pathVariableData": []
+    },
+    {
+      "folder": "e9e38734-cbc3-4bfb-9ca2-3746d50d81d6",
+      "id": "842a81d1-65a2-45a9-bc71-f56056069aa0",
+      "name": "DocusignLink",
+      "dataMode": "raw",
+      "dataDisabled": false,
+      "descriptionFormat": "markdown",
+      "description": "Retrieves a Docusign link to view the contract.",
+      "headers": "v-correlation-id:3fcb1437-4e52-4946-9ae1-e618351b6d16\r\nContent-Type:application/json\r\nAccept:application/json\r\n",
+      "method": "POST",
+      "pathVariables": {},
+      "url": "{{default}}/applications/documentlink",
+      "responses": [
+        {
+          "request": "842a81d1-65a2-45a9-bc71-f56056069aa0",
+          "id": "964484da-65c6-49cc-9151-cbb6d08cef2d",
+          "name": "Response_200",
+          "status": "Success",
+          "responseCode": {
+            "code": 200,
+            "name": "200",
+            "detail": "Success"
+          },
+          "headers": [
+            {
+              "name": "v-correlation-id",
+              "key": "v-correlation-id",
+              "value": "3fcb1437-4e52-4946-9ae1-e618351b6d16",
+              "description": "Unique transaction Id. Will be generated if not provided and returned in response headers."
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "mime": "application/json",
+          "text": "{\r\n  \"embeddingUrl\": \"https://docusign.com/Signing/StartInSession.aspx?t=7f0d21a4-2798-402f-8b26-b12dbb37ae40\"\r\n}",
+          "language": "Text",
+          "rawDataType": "text"
+        }
+      ],
+      "rawModeData": "{\r\n  \"externalRefId\": \"df8a6d82-3bb4-4f3b-ba18-57a5981ede8e\",\r\n  \"returnUrl\": \"https://docusign.com\"\r\n}",
+      "collectionId": "908b3917-57a8-45ce-82bf-6e093021d200",
+      "queryParams": [],
+      "headerData": [
+        {
+          "key": "v-correlation-id",
+          "value": "3fcb1437-4e52-4946-9ae1-e618351b6d16",
+          "description": "Unique transaction Id. Will be generated if not provided and returned in response headers."
+        },
+        {
+          "key": "Content-Type",
+          "value": "application/json",
+          "description": "Indicates the media type of the request-body. Accepts application/json."
+        },
+        {
+          "key": "Accept",
+          "value": "application/json"
+        }
+      ],
+      "pathVariableData": []
+    },
+    {
+      "folder": "d6cf6db9-81c0-4475-bb1d-40f5ce262e20",
+      "id": "e0a61e89-dba6-4f2a-a6f5-2f1a960cc3fa",
+      "name": "Gethealth",
+      "dataDisabled": false,
+      "descriptionFormat": "markdown",
+      "description": "Checks the the health of Launchpad and its dependent down streams systems like CPQ, Sales Force, XAA and Jigsaw at regular intervals to check the system is up or down.",
+      "headers": "v-correlation-id:3fcb1437-4e52-4946-9ae1-e618351b6d16\r\nAccept:application/json\r\n",
+      "method": "GET",
+      "pathVariables": {},
+      "url": "{{default}}/applications/health",
+      "responses": [
+        {
+          "request": "e0a61e89-dba6-4f2a-a6f5-2f1a960cc3fa",
+          "id": "82b10811-4bb0-443f-8d4b-36a35334892f",
+          "name": "Response_200",
+          "status": "Response is UP or DOWN of Launchpad & it's downstream system.",
+          "responseCode": {
+            "code": 200,
+            "name": "200",
+            "detail": "Response is UP or DOWN of Launchpad & it's downstream system."
+          },
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "mime": "application/json",
+          "text": "{\r\n  \"status\": \"UP\"\r\n}",
+          "language": "Text",
+          "rawDataType": "text"
+        }
+      ],
+      "collectionId": "908b3917-57a8-45ce-82bf-6e093021d200",
+      "queryParams": [],
+      "headerData": [
+        {
+          "key": "v-correlation-id",
+          "value": "3fcb1437-4e52-4946-9ae1-e618351b6d16",
+          "description": "Unique transaction Id. Will be generated if not provided and returned in response headers."
+        },
+        {
+          "key": "Accept",
+          "value": "application/json"
+        }
+      ],
+      "pathVariableData": []
+    }
+  ],
+  "variables": [
+    {
+      "key": "default",
+      "value": "https://apis.cert.worldpay.com/merchant-boarding/v2"
+    },
+    {
+      "key": "default1",
+      "value": "https://apis.cert.worldpay.com/merchant-boarding/v1"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      },
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "Authorization96",
+        "type": "string"
+      }
+    ]
+  }
+}

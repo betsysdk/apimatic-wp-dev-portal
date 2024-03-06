@@ -1,0 +1,580 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_source": "apimatic.transformer",
+  "resources": [
+    {
+      "name": "Launchpad: Non-POS Merchant Boarding",
+      "_type": "workspace",
+      "_id": "wrk_31f814ce7a394383aea2f86ab0f7bcba",
+      "description": "The Launchpad Merchant Boarding API allows Worldpay partners to onboard merchants to Worldpay's Payments Platform. Please see the Getting Started page for more information. </br> </br> To contact our certifications team, please email <a href=\"mailto:Certification2@fisglobal.com\">Certification2@fisglobal.com</a>.   </br> To contact the product team, please email <a href=\"mailto:APICustomerIntegration@fisglobal.com\">APICustomerIntegration@fisglobal.com</a \n # Authentication \n<SecurityDefinitions />"
+    },
+    {
+      "name": "production",
+      "data": {
+        "default": "https://apis.cert.worldpay.com/merchant-boarding/v2"
+      },
+      "_type": "environment",
+      "_id": "env_8f68640f576541e0a06167074ddc0fdc",
+      "parentId": "wrk_31f814ce7a394383aea2f86ab0f7bcba"
+    },
+    {
+      "name": "environment2",
+      "data": {
+        "default": "https://apis.cert.worldpay.com/merchant-boarding/v1"
+      },
+      "_type": "environment",
+      "_id": "env_fb5a1edbdb9d445a97b1b57124fd9321",
+      "parentId": "wrk_31f814ce7a394383aea2f86ab0f7bcba"
+    },
+    {
+      "name": "Initiate Boarding Application",
+      "_type": "request_group",
+      "_id": "fld_16a822ffea5b4a67b3faac5a2d40f707",
+      "parentId": "wrk_31f814ce7a394383aea2f86ab0f7bcba",
+      "description": "Resources to create/edit and read pending boarding applications."
+    },
+    {
+      "name": "Equipment Lookup",
+      "_type": "request_group",
+      "_id": "fld_deee440d21eb48fe85a3088904d891fd",
+      "parentId": "wrk_31f814ce7a394383aea2f86ab0f7bcba"
+    },
+    {
+      "name": "Choose Equipment",
+      "_type": "request_group",
+      "_id": "fld_a29ff7229f1249e8990e38c2a81e9616",
+      "parentId": "wrk_31f814ce7a394383aea2f86ab0f7bcba",
+      "description": "Resources to choose the terminals."
+    },
+    {
+      "name": "Submit Application",
+      "_type": "request_group",
+      "_id": "fld_b40d3f3921a04b578543a1a12ccc2fd1",
+      "parentId": "wrk_31f814ce7a394383aea2f86ab0f7bcba",
+      "description": "Resources to validate and submit the final application for boarding."
+    },
+    {
+      "name": "Check Application Status",
+      "_type": "request_group",
+      "_id": "fld_f558ac4c307047d1bc9316f20f8a4701",
+      "parentId": "wrk_31f814ce7a394383aea2f86ab0f7bcba",
+      "description": "Resource to check status of the application."
+    },
+    {
+      "name": "Review and Sign Contract",
+      "_type": "request_group",
+      "_id": "fld_1425e03885d3480d9e845a976aaa853f",
+      "parentId": "wrk_31f814ce7a394383aea2f86ab0f7bcba",
+      "description": "Resources to retrieve the contract and digitally sign."
+    },
+    {
+      "name": "Check Launchpad health",
+      "_type": "request_group",
+      "_id": "fld_f4ebf2d25df6451ab996aa101bc988cb",
+      "parentId": "wrk_31f814ce7a394383aea2f86ab0f7bcba",
+      "description": "Resources to check the the health of Launchpad and its dependent down streams systems at regular intervals to check the system is up or down."
+    },
+    {
+      "name": "ExisitingApplication",
+      "method": "PUT",
+      "url": "{{default}}/applications",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\r\n  \"externalRefId\": \"df8a6d82-3bb4-4f3b-ba18-57a5981ede8e\",\r\n  \"businessInfo\": {\r\n    \"dbaName\": \"The DBA Name\",\r\n    \"legalName\": \"legalName28\",\r\n    \"ownershipType\": \"LLC\",\r\n    \"mccCode\": \"5812\",\r\n    \"businessEstablishedDate\": \"2000-03-23\",\r\n    \"websiteUrl\": \"www.thefoodplace.com\",\r\n    \"numberOfLocation\": 2,\r\n    \"federalTaxId\": \"123456781\",\r\n    \"paymentAcceptanceMethod\": [\r\n      \"inPerson\",\r\n      \"onlineSite\"\r\n    ],\r\n    \"pciadc\": \"No\",\r\n    \"pcidssValidated\": \"No\",\r\n    \"surroundingArea\": \"Commercial\",\r\n    \"productServiceSold\": \"Food\",\r\n    \"ownAddYears\": 2,\r\n    \"lengthOfContract\": \"lengthOfContract39\",\r\n    \"seasonal\": \"Yes\",\r\n    \"activeMonths\": [\r\n      \"Jan\",\r\n      \"Feb\",\r\n      \"Mar\"\r\n    ],\r\n    \"warranty\": \"1 YEAR\",\r\n    \"returnPolicy\": \"30 Day\",\r\n    \"taxExempt\": \"true\",\r\n    \"acceptCreditCards\": \"true\",\r\n    \"govOwnedMerchantCountry\": \"US\"\r\n  },\r\n  \"transactionInfo\": {\r\n    \"annualSalesVolume\": 20000.12,\r\n    \"percentRetailSwipedTransactions\": 82,\r\n    \"averageTicket\": 2.3,\r\n    \"highestTicket\": 32.41,\r\n    \"currentProcessor\": \"Global Payments\",\r\n    \"acceptChargebacks\": \"No\",\r\n    \"chargebackPercent\": 0,\r\n    \"returnPercent\": 10,\r\n    \"cardNotPresentPercent\": 20,\r\n    \"businessToBusinessPercent\": 20,\r\n    \"internetTransactionPercent\": 10,\r\n    \"inPersonTransactionPercent\": 10,\r\n    \"motoTransactionPercent\": 10,\r\n    \"annualCreditSalesVolume\": 123.32,\r\n    \"annualDebitSalesVolume\": 32.23,\r\n    \"annualAmexVolume\": 10000,\r\n    \"amexAverageTicket\": 2.3,\r\n    \"averageNumberofDays\": 10,\r\n    \"needsProcessingBy\": \"2022-11-01\"\r\n  },\r\n  \"leadSource\": \"Activate\",\r\n  \"owners\": [\r\n    {\r\n      \"type\": \"Control Owner Contact\",\r\n      \"firstName\": \"Todd\",\r\n      \"lastName\": \"Davis\",\r\n      \"phoneNumber\": \"5131234567\",\r\n      \"email\": \"test@gmail.com\",\r\n      \"addressLine1\": \"4355 N Coalwhipe St.\",\r\n      \"city\": \"Denver\",\r\n      \"state\": \"CO\",\r\n      \"country\": \"United States\",\r\n      \"postalCode\": \"12345\",\r\n      \"title\": \"President\",\r\n      \"middleInitial\": \"M\",\r\n      \"phoneNumberExt\": \"1234\",\r\n      \"phoneType\": \"mobile\",\r\n      \"alternatePhone\": \"5131234567\",\r\n      \"alternatePhoneType\": \"home\",\r\n      \"faxNumber\": \"5131234567\",\r\n      \"ownershipPercentage\": 98,\r\n      \"ssn\": \"123456789\",\r\n      \"dob\": \"2000-03-23\",\r\n      \"addressLine2\": \"suite 104\",\r\n      \"postalCodeExtension\": \"1234\",\r\n      \"identification\": [\r\n        {\r\n          \"idType\": \"PASSPORT\",\r\n          \"idNumber\": \"312312341\",\r\n          \"issuedCity\": \"City Town\",\r\n          \"issuedState\": \"CO\",\r\n          \"issuedCountry\": \"US\",\r\n          \"dateIssued\": \"1999-01-30\",\r\n          \"dateExpires\": \"2020-02-11\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"guarantors\": [\r\n    {\r\n      \"type\": \"Guarantor 1 Contact\",\r\n      \"firstName\": \"Todd\",\r\n      \"lastName\": \"Davis\",\r\n      \"phoneNumber\": \"5131234567\",\r\n      \"email\": \"test@gmail.com\",\r\n      \"addressLine1\": \"4355 N Coalwhipe St.\",\r\n      \"city\": \"Denver\",\r\n      \"state\": \"CO\",\r\n      \"country\": \"United States\",\r\n      \"postalCode\": \"12345\",\r\n      \"title\": \"President\",\r\n      \"middleInitial\": \"M\",\r\n      \"phoneNumberExt\": \"1234\",\r\n      \"phoneType\": \"mobile\",\r\n      \"alternatePhone\": \"5131234567\",\r\n      \"alternatePhoneType\": \"home\",\r\n      \"faxNumber\": \"5131234567\",\r\n      \"ownershipPercentage\": 27,\r\n      \"ssn\": \"123456789\",\r\n      \"dob\": \"2000-03-23\",\r\n      \"addressLine2\": \"suite 104\",\r\n      \"postalCodeExtension\": \"1234\",\r\n      \"identification\": [\r\n        {\r\n          \"idType\": \"PASSPORT\",\r\n          \"idNumber\": \"312312341\",\r\n          \"issuedCity\": \"City Town\",\r\n          \"issuedState\": \"CO\",\r\n          \"issuedCountry\": \"US\",\r\n          \"dateIssued\": \"1999-01-30\",\r\n          \"dateExpires\": \"2020-02-11\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"authorizedSigners\": [\r\n    {\r\n      \"roleName\": \"Merchant\",\r\n      \"signingExperience\": \"email\",\r\n      \"signingOrder\": \"2\",\r\n      \"firstName\": \"Todd\",\r\n      \"lastName\": \"Davis\",\r\n      \"phoneNumber\": \"5131234567\",\r\n      \"email\": \"test@gmail.com\",\r\n      \"ssn\": \"123456789\",\r\n      \"dob\": \"2000-03-23\",\r\n      \"addressLine1\": \"4355 N Coalwhipe St.\",\r\n      \"city\": \"Denver\",\r\n      \"state\": \"CO\",\r\n      \"country\": \"United States\",\r\n      \"postalCode\": \"12345\",\r\n      \"title\": \"President\",\r\n      \"middleInitial\": \"M\",\r\n      \"phoneNumberExt\": \"1234\",\r\n      \"phoneType\": \"mobile\",\r\n      \"alternatePhone\": \"5131234567\",\r\n      \"alternatePhoneType\": \"home\",\r\n      \"faxNumber\": \"5131234567\",\r\n      \"addressLine2\": \"suite 104\",\r\n      \"postalCodeExtension\": \"1234\",\r\n      \"identification\": [\r\n        {\r\n          \"idType\": \"PASSPORT\",\r\n          \"idNumber\": \"312312341\",\r\n          \"issuedCity\": \"City Town\",\r\n          \"issuedState\": \"CO\",\r\n          \"issuedCountry\": \"US\",\r\n          \"dateIssued\": \"1999-01-30\",\r\n          \"dateExpires\": \"2020-02-11\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"contacts\": [\r\n    {\r\n      \"type\": \"Primary Contact\",\r\n      \"firstName\": \"Todd\",\r\n      \"lastName\": \"Davis\",\r\n      \"phoneNumber\": \"5131234567\",\r\n      \"email\": \"test@gmail.com\",\r\n      \"title\": \"President\",\r\n      \"middleInitial\": \"M\",\r\n      \"ssn\": \"123456789\",\r\n      \"birthDate\": \"2000-03-23\",\r\n      \"phoneNumberExt\": \"1234\",\r\n      \"phoneType\": \"mobile\",\r\n      \"alternatePhone\": \"5131234567\",\r\n      \"alternatePhoneType\": \"home\",\r\n      \"faxNumber\": \"5131234567\"\r\n    }\r\n  ],\r\n  \"addresses\": [\r\n    {\r\n      \"type\": \"Physical Address\",\r\n      \"addressLine1\": \"4355 N Coalwhipe St.\",\r\n      \"city\": \"Denver\",\r\n      \"state\": \"CO\",\r\n      \"country\": \"United States\",\r\n      \"postalCode\": \"12345\",\r\n      \"addressLine2\": \"suite 104\",\r\n      \"postalCodeExtension\": \"1234\"\r\n    }\r\n  ],\r\n  \"bankAccount\": {\r\n    \"ddaType\": \"Checking\",\r\n    \"achType\": \"Commercial Checking\",\r\n    \"accountNumber\": \"011401545\",\r\n    \"routingNumber\": \"102000076\",\r\n    \"bankName\": \"Bank name\"\r\n  },\r\n  \"advancedSettelment\": [\r\n    {\r\n      \"settlementCategories\": [\r\n        \"Fees\"\r\n      ],\r\n      \"bankAccount\": {\r\n        \"ddaType\": \"Checking\",\r\n        \"achType\": \"Commercial Checking\",\r\n        \"accountNumber\": \"011401545\",\r\n        \"routingNumber\": \"102000076\",\r\n        \"bankName\": \"Bank name\"\r\n      }\r\n    }\r\n  ],\r\n  \"salesAgent\": {\r\n    \"firstName\": \"John\",\r\n    \"lastName\": \"Doe\",\r\n    \"email\": \"email12\",\r\n    \"id\": \"U15315\",\r\n    \"mobilePhoneNumber\": \"1234567890\"\r\n  },\r\n  \"installationContact\": {\r\n    \"firstName\": \"Sam\",\r\n    \"lastName\": \"Doe\",\r\n    \"email\": \"email79\",\r\n    \"id\": \"U15318\",\r\n    \"mobilePhoneNumber\": \"1234567890\"\r\n  },\r\n  \"routeToSalesRep\": false\r\n}"
+      },
+      "headers": [
+        {
+          "name": "v-correlation-id",
+          "value": "3fcb1437-4e52-4946-9ae1-e618351b6d16",
+          "disabled": false
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "disabled": false
+        },
+        {
+          "name": "Authorization",
+          "value": "Authorization95",
+          "disabled": false
+        }
+      ],
+      "_type": "request",
+      "_id": "req_132b7d0e7cde4c0dabf00be2df8a0ff6",
+      "parentId": "fld_16a822ffea5b4a67b3faac5a2d40f707",
+      "description": "This endpoint allows merchants to update an existing application with new information."
+    },
+    {
+      "name": "NewApplication",
+      "method": "POST",
+      "url": "{{default}}/applications",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\r\n  \"businessInfo\": {\r\n    \"dbaName\": \"The DBA Name\",\r\n    \"legalName\": \"legalName28\",\r\n    \"ownershipType\": \"LLC\",\r\n    \"mccCode\": \"5812\",\r\n    \"businessEstablishedDate\": \"2000-03-23\",\r\n    \"websiteUrl\": \"www.thefoodplace.com\",\r\n    \"numberOfLocation\": 2,\r\n    \"federalTaxId\": \"123456781\",\r\n    \"paymentAcceptanceMethod\": [\r\n      \"inPerson\",\r\n      \"onlineSite\"\r\n    ],\r\n    \"pciadc\": \"No\",\r\n    \"pcidssValidated\": \"No\",\r\n    \"surroundingArea\": \"Commercial\",\r\n    \"productServiceSold\": \"Food\",\r\n    \"ownAddYears\": 2,\r\n    \"lengthOfContract\": \"lengthOfContract39\",\r\n    \"seasonal\": \"Yes\",\r\n    \"activeMonths\": [\r\n      \"Jan\",\r\n      \"Feb\",\r\n      \"Mar\"\r\n    ],\r\n    \"warranty\": \"1 YEAR\",\r\n    \"returnPolicy\": \"30 Day\",\r\n    \"taxExempt\": \"true\",\r\n    \"acceptCreditCards\": \"true\",\r\n    \"govOwnedMerchantCountry\": \"US\"\r\n  },\r\n  \"transactionInfo\": {\r\n    \"annualSalesVolume\": 20000.12,\r\n    \"percentRetailSwipedTransactions\": 82,\r\n    \"averageTicket\": 2.3,\r\n    \"highestTicket\": 32.41,\r\n    \"currentProcessor\": \"Global Payments\",\r\n    \"acceptChargebacks\": \"No\",\r\n    \"chargebackPercent\": 0,\r\n    \"returnPercent\": 10,\r\n    \"cardNotPresentPercent\": 20,\r\n    \"businessToBusinessPercent\": 20,\r\n    \"internetTransactionPercent\": 10,\r\n    \"inPersonTransactionPercent\": 10,\r\n    \"motoTransactionPercent\": 10,\r\n    \"annualCreditSalesVolume\": 123.32,\r\n    \"annualDebitSalesVolume\": 32.23,\r\n    \"annualAmexVolume\": 10000,\r\n    \"amexAverageTicket\": 2.3,\r\n    \"averageNumberofDays\": 10,\r\n    \"needsProcessingBy\": \"2022-11-01\"\r\n  },\r\n  \"authorizedSigners\": [\r\n    {\r\n      \"roleName\": \"Merchant\",\r\n      \"signingExperience\": \"email\",\r\n      \"signingOrder\": \"2\",\r\n      \"firstName\": \"Todd\",\r\n      \"lastName\": \"Davis\",\r\n      \"phoneNumber\": \"5131234567\",\r\n      \"email\": \"test@gmail.com\",\r\n      \"ssn\": \"123456789\",\r\n      \"dob\": \"2000-03-23\",\r\n      \"addressLine1\": \"4355 N Coalwhipe St.\",\r\n      \"city\": \"Denver\",\r\n      \"state\": \"CO\",\r\n      \"country\": \"United States\",\r\n      \"postalCode\": \"12345\",\r\n      \"title\": \"President\",\r\n      \"middleInitial\": \"M\",\r\n      \"phoneNumberExt\": \"1234\",\r\n      \"phoneType\": \"mobile\",\r\n      \"alternatePhone\": \"5131234567\",\r\n      \"alternatePhoneType\": \"home\",\r\n      \"faxNumber\": \"5131234567\",\r\n      \"addressLine2\": \"suite 104\",\r\n      \"postalCodeExtension\": \"1234\",\r\n      \"identification\": [\r\n        {\r\n          \"idType\": \"PASSPORT\",\r\n          \"idNumber\": \"312312341\",\r\n          \"issuedCity\": \"City Town\",\r\n          \"issuedState\": \"CO\",\r\n          \"issuedCountry\": \"US\",\r\n          \"dateIssued\": \"1999-01-30\",\r\n          \"dateExpires\": \"2020-02-11\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"contacts\": [\r\n    {\r\n      \"type\": \"Primary Contact\",\r\n      \"firstName\": \"Todd\",\r\n      \"lastName\": \"Davis\",\r\n      \"phoneNumber\": \"5131234567\",\r\n      \"email\": \"test@gmail.com\",\r\n      \"title\": \"President\",\r\n      \"middleInitial\": \"M\",\r\n      \"ssn\": \"123456789\",\r\n      \"birthDate\": \"2000-03-23\",\r\n      \"phoneNumberExt\": \"1234\",\r\n      \"phoneType\": \"mobile\",\r\n      \"alternatePhone\": \"5131234567\",\r\n      \"alternatePhoneType\": \"home\",\r\n      \"faxNumber\": \"5131234567\"\r\n    }\r\n  ],\r\n  \"addresses\": [\r\n    {\r\n      \"type\": \"Physical Address\",\r\n      \"addressLine1\": \"4355 N Coalwhipe St.\",\r\n      \"city\": \"Denver\",\r\n      \"state\": \"CO\",\r\n      \"country\": \"United States\",\r\n      \"postalCode\": \"12345\",\r\n      \"addressLine2\": \"suite 104\",\r\n      \"postalCodeExtension\": \"1234\"\r\n    }\r\n  ],\r\n  \"clientTrackingId\": \"1341341234132412341\",\r\n  \"owners\": [\r\n    {\r\n      \"type\": \"Control Owner Contact\",\r\n      \"firstName\": \"Todd\",\r\n      \"lastName\": \"Davis\",\r\n      \"phoneNumber\": \"5131234567\",\r\n      \"email\": \"test@gmail.com\",\r\n      \"addressLine1\": \"4355 N Coalwhipe St.\",\r\n      \"city\": \"Denver\",\r\n      \"state\": \"CO\",\r\n      \"country\": \"United States\",\r\n      \"postalCode\": \"12345\",\r\n      \"title\": \"President\",\r\n      \"middleInitial\": \"M\",\r\n      \"phoneNumberExt\": \"1234\",\r\n      \"phoneType\": \"mobile\",\r\n      \"alternatePhone\": \"5131234567\",\r\n      \"alternatePhoneType\": \"home\",\r\n      \"faxNumber\": \"5131234567\",\r\n      \"ownershipPercentage\": 98,\r\n      \"ssn\": \"123456789\",\r\n      \"dob\": \"2000-03-23\",\r\n      \"addressLine2\": \"suite 104\",\r\n      \"postalCodeExtension\": \"1234\",\r\n      \"identification\": [\r\n        {\r\n          \"idType\": \"PASSPORT\",\r\n          \"idNumber\": \"312312341\",\r\n          \"issuedCity\": \"City Town\",\r\n          \"issuedState\": \"CO\",\r\n          \"issuedCountry\": \"US\",\r\n          \"dateIssued\": \"1999-01-30\",\r\n          \"dateExpires\": \"2020-02-11\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"guarantors\": [\r\n    {\r\n      \"type\": \"Guarantor 1 Contact\",\r\n      \"firstName\": \"Todd\",\r\n      \"lastName\": \"Davis\",\r\n      \"phoneNumber\": \"5131234567\",\r\n      \"email\": \"test@gmail.com\",\r\n      \"addressLine1\": \"4355 N Coalwhipe St.\",\r\n      \"city\": \"Denver\",\r\n      \"state\": \"CO\",\r\n      \"country\": \"United States\",\r\n      \"postalCode\": \"12345\",\r\n      \"title\": \"President\",\r\n      \"middleInitial\": \"M\",\r\n      \"phoneNumberExt\": \"1234\",\r\n      \"phoneType\": \"mobile\",\r\n      \"alternatePhone\": \"5131234567\",\r\n      \"alternatePhoneType\": \"home\",\r\n      \"faxNumber\": \"5131234567\",\r\n      \"ownershipPercentage\": 27,\r\n      \"ssn\": \"123456789\",\r\n      \"dob\": \"2000-03-23\",\r\n      \"addressLine2\": \"suite 104\",\r\n      \"postalCodeExtension\": \"1234\",\r\n      \"identification\": [\r\n        {\r\n          \"idType\": \"PASSPORT\",\r\n          \"idNumber\": \"312312341\",\r\n          \"issuedCity\": \"City Town\",\r\n          \"issuedState\": \"CO\",\r\n          \"issuedCountry\": \"US\",\r\n          \"dateIssued\": \"1999-01-30\",\r\n          \"dateExpires\": \"2020-02-11\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"bankAccount\": {\r\n    \"ddaType\": \"Checking\",\r\n    \"achType\": \"Commercial Checking\",\r\n    \"accountNumber\": \"011401545\",\r\n    \"routingNumber\": \"102000076\",\r\n    \"bankName\": \"Bank name\"\r\n  },\r\n  \"advancedSettelment\": [\r\n    {\r\n      \"settlementCategories\": [\r\n        \"Fees\"\r\n      ],\r\n      \"bankAccount\": {\r\n        \"ddaType\": \"Checking\",\r\n        \"achType\": \"Commercial Checking\",\r\n        \"accountNumber\": \"011401545\",\r\n        \"routingNumber\": \"102000076\",\r\n        \"bankName\": \"Bank name\"\r\n      }\r\n    }\r\n  ],\r\n  \"salesAgent\": {\r\n    \"firstName\": \"John\",\r\n    \"lastName\": \"Doe\",\r\n    \"email\": \"email12\",\r\n    \"id\": \"U15315\",\r\n    \"mobilePhoneNumber\": \"1234567890\"\r\n  },\r\n  \"installationContact\": {\r\n    \"firstName\": \"Sam\",\r\n    \"lastName\": \"Doe\",\r\n    \"email\": \"email79\",\r\n    \"id\": \"U15318\",\r\n    \"mobilePhoneNumber\": \"1234567890\"\r\n  },\r\n  \"additionalInformation\": [\r\n    {\r\n      \"key\": \"partnerEmployeeId\",\r\n      \"value\": \"4656\"\r\n    }\r\n  ],\r\n  \"leadSource\": \"LP Connect API\",\r\n  \"routeToSalesRep\": false,\r\n  \"productsInquiry\": [\r\n    \"productsInquiry14\"\r\n  ]\r\n}"
+      },
+      "headers": [
+        {
+          "name": "v-correlation-id",
+          "value": "3fcb1437-4e52-4946-9ae1-e618351b6d16",
+          "disabled": false
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "disabled": false
+        },
+        {
+          "name": "Authorization",
+          "value": "Authorization24",
+          "disabled": false
+        }
+      ],
+      "_type": "request",
+      "_id": "req_d2527a5cd5ce456b86c2b4323e6e6c05",
+      "parentId": "fld_16a822ffea5b4a67b3faac5a2d40f707",
+      "description": "Use this endpoint to collect the merchant information needed to initiate a new contract. "
+    },
+    {
+      "name": "FetchApplication",
+      "method": "GET",
+      "url": "{{default}}/applications",
+      "headers": [
+        {
+          "name": "externalRefId",
+          "value": "3fcb1437-4e52-4946-9ae1-e618351b6d16",
+          "disabled": false
+        },
+        {
+          "name": "v-correlation-id",
+          "value": "3fcb1437-4e52-4946-9ae1-e618351b6d16",
+          "disabled": false
+        },
+        {
+          "name": "Authorization",
+          "value": "Authorization49",
+          "disabled": false
+        }
+      ],
+      "_type": "request",
+      "_id": "req_79beee26015547eca122e83364fc77c9",
+      "parentId": "fld_16a822ffea5b4a67b3faac5a2d40f707",
+      "description": "Retrieves existing application data."
+    },
+    {
+      "name": "GetAdditionalConfigurations",
+      "method": "GET",
+      "url": "{{default}}/terminal/additional-configurations",
+      "headers": [
+        {
+          "name": "externalRefId",
+          "value": "3fcb1437-4e52-4946-9ae1-e618351b6d16",
+          "disabled": false
+        },
+        {
+          "name": "v-correlation-id",
+          "value": "3fcb1437-4e52-4946-9ae1-e618351b6d16",
+          "disabled": false
+        },
+        {
+          "name": "logicalApplicationId",
+          "value": "1073",
+          "disabled": false
+        },
+        {
+          "name": "Authorization",
+          "value": "Authorization60",
+          "disabled": false
+        }
+      ],
+      "_type": "request",
+      "_id": "req_656c26a1e4e642b999df1c5138791254",
+      "parentId": "fld_deee440d21eb48fe85a3088904d891fd",
+      "description": "Fetches a list of valid terminal customizations and peripherals, such as electing to password protect a void."
+    },
+    {
+      "name": "GetEquipmentSupported",
+      "method": "GET",
+      "url": "{{default}}/equipment/supported",
+      "headers": [
+        {
+          "name": "externalRefId",
+          "value": "3fcb1437-4e52-4946-9ae1-e618351b6d16",
+          "disabled": false
+        },
+        {
+          "name": "v-correlation-id",
+          "value": "3fcb1437-4e52-4946-9ae1-e618351b6d16",
+          "disabled": false
+        },
+        {
+          "name": "Authorization",
+          "value": "Authorization84",
+          "disabled": false
+        }
+      ],
+      "_type": "request",
+      "_id": "req_c463af097db24321babe85743f5e4c18",
+      "parentId": "fld_deee440d21eb48fe85a3088904d891fd",
+      "description": "Retrieve applicable equipment for an existing application."
+    },
+    {
+      "name": "GetTerminalInfo",
+      "method": "GET",
+      "url": "{{default}}/equipment/terminal-var",
+      "headers": [
+        {
+          "name": "externalRefId",
+          "value": "3fcb1437-4e52-4946-9ae1-e618351b6d16",
+          "disabled": false
+        },
+        {
+          "name": "v-correlation-id",
+          "value": "3fcb1437-4e52-4946-9ae1-e618351b6d16",
+          "disabled": false
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "disabled": false
+        },
+        {
+          "name": "locationId",
+          "value": "locationId45",
+          "disabled": false
+        },
+        {
+          "name": "merchantId",
+          "value": "merchantId42",
+          "disabled": false
+        },
+        {
+          "name": "Authorization",
+          "value": "Authorization19",
+          "disabled": false
+        }
+      ],
+      "_type": "request",
+      "_id": "req_0c7c038a027349258969f64443ae1ca2",
+      "parentId": "fld_a29ff7229f1249e8990e38c2a81e9616",
+      "description": "Gets the terminal configuration information for a specific partner."
+    },
+    {
+      "name": "UpdateTerminal",
+      "method": "PUT",
+      "url": "{{default}}/equipment/terminal-var",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\"shippingOption\":\"next day\",\"terminals\":[{\"terminalConfigs\":{\"requestId\":\"41231\",\"terminalId\":\"67\",\"terminalModel\":\"VAR - Xpient Solutions\",\"price\":187.99,\"quantity\":1,\"logicalApplicationId\":\"194\",\"accessMethod\":\"SSL\",\"paymentMethod\":\"PURCHASE / SALE\",\"environmentName\":\"Restaurant\"},\"products\":[{\"productId\":\"1\",\"productName\":\"Credit\"}]}]}"
+      },
+      "headers": [
+        {
+          "name": "externalRefId",
+          "value": "3fcb1437-4e52-4946-9ae1-e618351b6d16",
+          "disabled": false
+        },
+        {
+          "name": "v-correlation-id",
+          "value": "3fcb1437-4e52-4946-9ae1-e618351b6d16",
+          "disabled": false
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "disabled": false
+        },
+        {
+          "name": "locationId",
+          "value": "locationId11",
+          "disabled": false
+        },
+        {
+          "name": "merchantId",
+          "value": "merchantId86",
+          "disabled": false
+        },
+        {
+          "name": "Authorization",
+          "value": "Authorization22",
+          "disabled": false
+        }
+      ],
+      "_type": "request",
+      "_id": "req_d3a361630b5f4e8ca83718c75f872b4d",
+      "parentId": "fld_a29ff7229f1249e8990e38c2a81e9616",
+      "description": "Updates terminal configurations."
+    },
+    {
+      "name": "ConfigStandaloneTerminal",
+      "method": "POST",
+      "url": "{{default}}/equipment/terminal-var",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\"shippingOption\":\"next day\",\"terminals\":[{\"terminalConfigs\":{\"requestId\":\"41231\",\"terminalId\":\"67\",\"terminalModel\":\"VAR - Xpient Solutions\",\"price\":187.99,\"quantity\":1,\"logicalApplicationId\":\"194\",\"accessMethod\":\"SSL\",\"paymentMethod\":\"PURCHASE / SALE\",\"environmentName\":\"Restaurant\"},\"products\":[{\"productId\":\"1\",\"productName\":\"Credit\"}]}]}"
+      },
+      "headers": [
+        {
+          "name": "externalRefId",
+          "value": "3fcb1437-4e52-4946-9ae1-e618351b6d16",
+          "disabled": false
+        },
+        {
+          "name": "v-correlation-id",
+          "value": "3fcb1437-4e52-4946-9ae1-e618351b6d16",
+          "disabled": false
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "disabled": false
+        },
+        {
+          "name": "locationId",
+          "value": "locationId40",
+          "disabled": false
+        },
+        {
+          "name": "merchantId",
+          "value": "merchantId47",
+          "disabled": false
+        },
+        {
+          "name": "Authorization",
+          "value": "Authorization3",
+          "disabled": false
+        }
+      ],
+      "_type": "request",
+      "_id": "req_39a88139c6e648899e709a3e90468835",
+      "parentId": "fld_a29ff7229f1249e8990e38c2a81e9616",
+      "description": "Sets up terminal configurations."
+    },
+    {
+      "name": "validateBoard",
+      "method": "PUT",
+      "url": "{{default}}/applications/validate",
+      "headers": [
+        {
+          "name": "externalRefId",
+          "value": "3fcb1437-4e52-4946-9ae1-e618351b6d16",
+          "disabled": false
+        },
+        {
+          "name": "v-correlation-id",
+          "value": "3fcb1437-4e52-4946-9ae1-e618351b6d16",
+          "disabled": false
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "disabled": false
+        },
+        {
+          "name": "Authorization",
+          "value": "Authorization64",
+          "disabled": false
+        }
+      ],
+      "_type": "request",
+      "_id": "req_b173f06a6d274803b255faee1125eaa5",
+      "parentId": "fld_b40d3f3921a04b578543a1a12ccc2fd1",
+      "description": "Begins the merchant validation process before boarding after all necessary information has been submitted to the API. Please see the reference guide for specific boarding requirements."
+    },
+    {
+      "name": "InititateBoard",
+      "method": "PUT",
+      "url": "{{default}}/applications/board",
+      "headers": [
+        {
+          "name": "externalRefId",
+          "value": "3fcb1437-4e52-4946-9ae1-e618351b6d16",
+          "disabled": false
+        },
+        {
+          "name": "v-correlation-id",
+          "value": "3fcb1437-4e52-4946-9ae1-e618351b6d16",
+          "disabled": false
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "disabled": false
+        },
+        {
+          "name": "threatmetrixId",
+          "value": "threatmetrixId42",
+          "disabled": false
+        },
+        {
+          "name": "Authorization",
+          "value": "Authorization65",
+          "disabled": false
+        }
+      ],
+      "_type": "request",
+      "_id": "req_f47d81250863499ba192b785bee5ea86",
+      "parentId": "fld_b40d3f3921a04b578543a1a12ccc2fd1",
+      "description": "Begins the merchant boarding process after all necessary information has been submitted to the API. Please see the reference guide for specific boarding requirements."
+    },
+    {
+      "name": "GetApplicationStatus",
+      "method": "GET",
+      "url": "{{default}}/applications/status",
+      "headers": [
+        {
+          "name": "externalRefId",
+          "value": "3fcb1437-4e52-4946-9ae1-e618351b6d16",
+          "disabled": false
+        },
+        {
+          "name": "v-correlation-id",
+          "value": "3fcb1437-4e52-4946-9ae1-e618351b6d16",
+          "disabled": false
+        },
+        {
+          "name": "Authorization",
+          "value": "Authorization61",
+          "disabled": false
+        }
+      ],
+      "_type": "request",
+      "_id": "req_f1671d5889444fae86af9606e12500fc",
+      "parentId": "fld_f558ac4c307047d1bc9316f20f8a4701",
+      "description": "Retrieves the status of a contract when passed with an externalRefID. Both the externalRefID and authorization header are required."
+    },
+    {
+      "name": "fetchSignerStatus",
+      "method": "GET",
+      "url": "{{default}}/applications/status/signers",
+      "headers": [
+        {
+          "name": "externalRefId",
+          "value": "3fcb1437-4e52-4946-9ae1-e618351b6d16",
+          "disabled": false
+        },
+        {
+          "name": "v-correlation-id",
+          "value": "3fcb1437-4e52-4946-9ae1-e618351b6d16",
+          "disabled": false
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "disabled": false
+        },
+        {
+          "name": "Authorization",
+          "value": "Authorization1",
+          "disabled": false
+        }
+      ],
+      "_type": "request",
+      "_id": "req_575a099c9889415d89edf6886b749f81",
+      "parentId": "fld_f558ac4c307047d1bc9316f20f8a4701",
+      "description": "Use this endpoint to get signer status"
+    },
+    {
+      "name": "fetchApplicationStatusHistory",
+      "method": "GET",
+      "url": "{{default}}/applications/status/history",
+      "headers": [
+        {
+          "name": "externalRefId",
+          "value": "3fcb1437-4e52-4946-9ae1-e618351b6d16",
+          "disabled": false
+        },
+        {
+          "name": "v-correlation-id",
+          "value": "3fcb1437-4e52-4946-9ae1-e618351b6d16",
+          "disabled": false
+        },
+        {
+          "name": "Authorization",
+          "value": "Authorization90",
+          "disabled": false
+        }
+      ],
+      "_type": "request",
+      "_id": "req_1b13fe7f82f941f08f17882cebc555db",
+      "parentId": "fld_f558ac4c307047d1bc9316f20f8a4701",
+      "description": "Use this endpoint to get a application's status history."
+    },
+    {
+      "name": "GetContract",
+      "method": "GET",
+      "url": "{{default}}/contracts",
+      "headers": [
+        {
+          "name": "externalRefId",
+          "value": "3fcb1437-4e52-4946-9ae1-e618351b6d16",
+          "disabled": false
+        },
+        {
+          "name": "v-correlation-id",
+          "value": "3fcb1437-4e52-4946-9ae1-e618351b6d16",
+          "disabled": false
+        },
+        {
+          "name": "Authorization",
+          "value": "Authorization78",
+          "disabled": false
+        }
+      ],
+      "_type": "request",
+      "_id": "req_71f48956273e4405a7ec909894d65dd0",
+      "parentId": "fld_1425e03885d3480d9e845a976aaa853f",
+      "description": "Returns a PDF contract to be signed."
+    },
+    {
+      "name": "DocusignLink",
+      "method": "POST",
+      "url": "{{default}}/applications/documentlink",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\r\n  \"externalRefId\": \"df8a6d82-3bb4-4f3b-ba18-57a5981ede8e\",\r\n  \"returnUrl\": \"https://docusign.com\"\r\n}"
+      },
+      "headers": [
+        {
+          "name": "v-correlation-id",
+          "value": "3fcb1437-4e52-4946-9ae1-e618351b6d16",
+          "disabled": false
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "disabled": false
+        },
+        {
+          "name": "Authorization",
+          "value": "Authorization91",
+          "disabled": false
+        }
+      ],
+      "_type": "request",
+      "_id": "req_4dde51164c5242c0bded17f9d1bab0bf",
+      "parentId": "fld_1425e03885d3480d9e845a976aaa853f",
+      "description": "Retrieves a Docusign link to view the contract."
+    },
+    {
+      "name": "Gethealth",
+      "method": "GET",
+      "url": "{{default}}/applications/health",
+      "headers": [
+        {
+          "name": "v-correlation-id",
+          "value": "3fcb1437-4e52-4946-9ae1-e618351b6d16",
+          "disabled": false
+        },
+        {
+          "name": "Authorization",
+          "value": "Authorization18",
+          "disabled": false
+        }
+      ],
+      "_type": "request",
+      "_id": "req_fb0baa4e4deb4852b4e58fed2bff9db8",
+      "parentId": "fld_f4ebf2d25df6451ab996aa101bc988cb",
+      "description": "Checks the the health of Launchpad and its dependent down streams systems like CPQ, Sales Force, XAA and Jigsaw at regular intervals to check the system is up or down."
+    }
+  ]
+}

@@ -1,0 +1,1339 @@
+_type: export
+__export_format: 4
+__export_source: apimatic.transformer
+resources:
+- name: 'Launchpad: Non-POS Merchant Boarding'
+  _type: workspace
+  _id: wrk_87a371df1f8b4e6aac273cb9c07c0d6a
+  description: "The Launchpad Merchant Boarding API allows Worldpay partners to onboard merchants to Worldpay's Payments Platform. Please see the Getting Started page for more information. </br> </br> To contact our certifications team, please email <a href=\"mailto:Certification2@fisglobal.com\">Certification2@fisglobal.com</a>.   </br> To contact the product team, please email <a href=\"mailto:APICustomerIntegration@fisglobal.com\">APICustomerIntegration@fisglobal.com</a \n # Authentication \n<SecurityDefinitions />"
+- name: production
+  data:
+    default: https://apis.cert.worldpay.com/merchant-boarding/v2
+  _type: environment
+  _id: env_da9a7b4e930c448d899b3c44487daef8
+  parentId: wrk_87a371df1f8b4e6aac273cb9c07c0d6a
+- name: environment2
+  data:
+    default: https://apis.cert.worldpay.com/merchant-boarding/v1
+  _type: environment
+  _id: env_226666cbf2ca4407bb782ad69c616299
+  parentId: wrk_87a371df1f8b4e6aac273cb9c07c0d6a
+- name: Initiate Boarding Application
+  _type: request_group
+  _id: fld_841052b49a794648818eec119cb9cdf1
+  parentId: wrk_87a371df1f8b4e6aac273cb9c07c0d6a
+  description: Resources to create/edit and read pending boarding applications.
+- name: Equipment Lookup
+  _type: request_group
+  _id: fld_4c3596a2b79440dc8a60a65bc5663355
+  parentId: wrk_87a371df1f8b4e6aac273cb9c07c0d6a
+- name: Choose Equipment
+  _type: request_group
+  _id: fld_5a582a1a4b7449e08bf270573ec89f93
+  parentId: wrk_87a371df1f8b4e6aac273cb9c07c0d6a
+  description: Resources to choose the terminals.
+- name: Submit Application
+  _type: request_group
+  _id: fld_835f2f04e3b945ab96dca06a5e46675d
+  parentId: wrk_87a371df1f8b4e6aac273cb9c07c0d6a
+  description: Resources to validate and submit the final application for boarding.
+- name: Check Application Status
+  _type: request_group
+  _id: fld_04a53c196e50431da939f738eb827a31
+  parentId: wrk_87a371df1f8b4e6aac273cb9c07c0d6a
+  description: Resource to check status of the application.
+- name: Review and Sign Contract
+  _type: request_group
+  _id: fld_6b4f1d7959724dd78caa2ce62e914807
+  parentId: wrk_87a371df1f8b4e6aac273cb9c07c0d6a
+  description: Resources to retrieve the contract and digitally sign.
+- name: Check Launchpad health
+  _type: request_group
+  _id: fld_a09839d76f5d45bca2043b5d9dca8455
+  parentId: wrk_87a371df1f8b4e6aac273cb9c07c0d6a
+  description: Resources to check the the health of Launchpad and its dependent down streams systems at regular intervals to check the system is up or down.
+- name: ExisitingApplication
+  method: PUT
+  url: '{{default}}/applications'
+  body:
+    mimeType: application/json
+    text: >-
+      {
+
+        "externalRefId": "df8a6d82-3bb4-4f3b-ba18-57a5981ede8e",
+
+        "businessInfo": {
+
+          "dbaName": "The DBA Name",
+
+          "legalName": "legalName34",
+
+          "ownershipType": "LLC",
+
+          "mccCode": "5812",
+
+          "businessEstablishedDate": "2000-03-23",
+
+          "websiteUrl": "www.thefoodplace.com",
+
+          "numberOfLocation": 2,
+
+          "federalTaxId": "123456781",
+
+          "paymentAcceptanceMethod": [
+
+            "inPerson",
+
+            "onlineSite"
+
+          ],
+
+          "pciadc": "No",
+
+          "pcidssValidated": "No",
+
+          "surroundingArea": "Commercial",
+
+          "productServiceSold": "Food",
+
+          "ownAddYears": 2,
+
+          "lengthOfContract": "lengthOfContract11",
+
+          "seasonal": "Yes",
+
+          "activeMonths": [
+
+            "Jan",
+
+            "Feb",
+
+            "Mar"
+
+          ],
+
+          "warranty": "1 YEAR",
+
+          "returnPolicy": "30 Day",
+
+          "taxExempt": "true",
+
+          "acceptCreditCards": "true",
+
+          "govOwnedMerchantCountry": "US"
+
+        },
+
+        "transactionInfo": {
+
+          "annualSalesVolume": 20000.12,
+
+          "percentRetailSwipedTransactions": 82,
+
+          "averageTicket": 2.3,
+
+          "highestTicket": 32.41,
+
+          "currentProcessor": "Global Payments",
+
+          "acceptChargebacks": "No",
+
+          "chargebackPercent": 0,
+
+          "returnPercent": 10,
+
+          "cardNotPresentPercent": 20,
+
+          "businessToBusinessPercent": 20,
+
+          "internetTransactionPercent": 10,
+
+          "inPersonTransactionPercent": 10,
+
+          "motoTransactionPercent": 10,
+
+          "annualCreditSalesVolume": 123.32,
+
+          "annualDebitSalesVolume": 32.23,
+
+          "annualAmexVolume": 10000,
+
+          "amexAverageTicket": 2.3,
+
+          "averageNumberofDays": 10,
+
+          "needsProcessingBy": "2022-11-01"
+
+        },
+
+        "leadSource": "Activate",
+
+        "owners": [
+
+          {
+
+            "type": "Control Owner Contact",
+
+            "firstName": "Todd",
+
+            "lastName": "Davis",
+
+            "phoneNumber": "5131234567",
+
+            "email": "test@gmail.com",
+
+            "addressLine1": "4355 N Coalwhipe St.",
+
+            "city": "Denver",
+
+            "state": "CO",
+
+            "country": "United States",
+
+            "postalCode": "12345",
+
+            "title": "President",
+
+            "middleInitial": "M",
+
+            "phoneNumberExt": "1234",
+
+            "phoneType": "mobile",
+
+            "alternatePhone": "5131234567",
+
+            "alternatePhoneType": "home",
+
+            "faxNumber": "5131234567",
+
+            "ownershipPercentage": 69,
+
+            "ssn": "123456789",
+
+            "dob": "2000-03-23",
+
+            "addressLine2": "suite 104",
+
+            "postalCodeExtension": "1234",
+
+            "identification": [
+
+              {
+
+                "idType": "PASSPORT",
+
+                "idNumber": "312312341",
+
+                "issuedCity": "City Town",
+
+                "issuedState": "CO",
+
+                "issuedCountry": "US",
+
+                "dateIssued": "1999-01-30",
+
+                "dateExpires": "2020-02-11"
+
+              }
+
+            ]
+
+          }
+
+        ],
+
+        "guarantors": [
+
+          {
+
+            "type": "Guarantor 1 Contact",
+
+            "firstName": "Todd",
+
+            "lastName": "Davis",
+
+            "phoneNumber": "5131234567",
+
+            "email": "test@gmail.com",
+
+            "addressLine1": "4355 N Coalwhipe St.",
+
+            "city": "Denver",
+
+            "state": "CO",
+
+            "country": "United States",
+
+            "postalCode": "12345",
+
+            "title": "President",
+
+            "middleInitial": "M",
+
+            "phoneNumberExt": "1234",
+
+            "phoneType": "mobile",
+
+            "alternatePhone": "5131234567",
+
+            "alternatePhoneType": "home",
+
+            "faxNumber": "5131234567",
+
+            "ownershipPercentage": 40,
+
+            "ssn": "123456789",
+
+            "dob": "2000-03-23",
+
+            "addressLine2": "suite 104",
+
+            "postalCodeExtension": "1234",
+
+            "identification": [
+
+              {
+
+                "idType": "PASSPORT",
+
+                "idNumber": "312312341",
+
+                "issuedCity": "City Town",
+
+                "issuedState": "CO",
+
+                "issuedCountry": "US",
+
+                "dateIssued": "1999-01-30",
+
+                "dateExpires": "2020-02-11"
+
+              }
+
+            ]
+
+          }
+
+        ],
+
+        "authorizedSigners": [
+
+          {
+
+            "roleName": "Merchant",
+
+            "signingExperience": "email",
+
+            "signingOrder": "2",
+
+            "firstName": "Todd",
+
+            "lastName": "Davis",
+
+            "phoneNumber": "5131234567",
+
+            "email": "test@gmail.com",
+
+            "ssn": "123456789",
+
+            "dob": "2000-03-23",
+
+            "addressLine1": "4355 N Coalwhipe St.",
+
+            "city": "Denver",
+
+            "state": "CO",
+
+            "country": "United States",
+
+            "postalCode": "12345",
+
+            "title": "President",
+
+            "middleInitial": "M",
+
+            "phoneNumberExt": "1234",
+
+            "phoneType": "mobile",
+
+            "alternatePhone": "5131234567",
+
+            "alternatePhoneType": "home",
+
+            "faxNumber": "5131234567",
+
+            "addressLine2": "suite 104",
+
+            "postalCodeExtension": "1234",
+
+            "identification": [
+
+              {
+
+                "idType": "PASSPORT",
+
+                "idNumber": "312312341",
+
+                "issuedCity": "City Town",
+
+                "issuedState": "CO",
+
+                "issuedCountry": "US",
+
+                "dateIssued": "1999-01-30",
+
+                "dateExpires": "2020-02-11"
+
+              }
+
+            ]
+
+          }
+
+        ],
+
+        "contacts": [
+
+          {
+
+            "type": "Primary Contact",
+
+            "firstName": "Todd",
+
+            "lastName": "Davis",
+
+            "phoneNumber": "5131234567",
+
+            "email": "test@gmail.com",
+
+            "title": "President",
+
+            "middleInitial": "M",
+
+            "ssn": "123456789",
+
+            "birthDate": "2000-03-23",
+
+            "phoneNumberExt": "1234",
+
+            "phoneType": "mobile",
+
+            "alternatePhone": "5131234567",
+
+            "alternatePhoneType": "home",
+
+            "faxNumber": "5131234567"
+
+          }
+
+        ],
+
+        "addresses": [
+
+          {
+
+            "type": "Physical Address",
+
+            "addressLine1": "4355 N Coalwhipe St.",
+
+            "city": "Denver",
+
+            "state": "CO",
+
+            "country": "United States",
+
+            "postalCode": "12345",
+
+            "addressLine2": "suite 104",
+
+            "postalCodeExtension": "1234"
+
+          }
+
+        ],
+
+        "bankAccount": {
+
+          "ddaType": "Checking",
+
+          "achType": "Commercial Checking",
+
+          "accountNumber": "011401545",
+
+          "routingNumber": "102000076",
+
+          "bankName": "Bank name"
+
+        },
+
+        "advancedSettelment": [
+
+          {
+
+            "settlementCategories": [
+
+              "Deposits"
+
+            ],
+
+            "bankAccount": {
+
+              "ddaType": "Checking",
+
+              "achType": "Commercial Checking",
+
+              "accountNumber": "011401545",
+
+              "routingNumber": "102000076",
+
+              "bankName": "Bank name"
+
+            }
+
+          }
+
+        ],
+
+        "salesAgent": {
+
+          "firstName": "John",
+
+          "lastName": "Doe",
+
+          "email": "email52",
+
+          "id": "U15315",
+
+          "mobilePhoneNumber": "1234567890"
+
+        },
+
+        "installationContact": {
+
+          "firstName": "Sam",
+
+          "lastName": "Doe",
+
+          "email": "email47",
+
+          "id": "U15318",
+
+          "mobilePhoneNumber": "1234567890"
+
+        },
+
+        "routeToSalesRep": false
+
+      }
+  headers:
+  - name: v-correlation-id
+    value: 3fcb1437-4e52-4946-9ae1-e618351b6d16
+    disabled: false
+  - name: Content-Type
+    value: application/json
+    disabled: false
+  - name: Authorization
+    value: Authorization94
+    disabled: false
+  _type: request
+  _id: req_a4923a59215b4a1f8b7e46c17fe6ddef
+  parentId: fld_841052b49a794648818eec119cb9cdf1
+  description: This endpoint allows merchants to update an existing application with new information.
+- name: NewApplication
+  method: POST
+  url: '{{default}}/applications'
+  body:
+    mimeType: application/json
+    text: >-
+      {
+
+        "businessInfo": {
+
+          "dbaName": "The DBA Name",
+
+          "legalName": "legalName34",
+
+          "ownershipType": "LLC",
+
+          "mccCode": "5812",
+
+          "businessEstablishedDate": "2000-03-23",
+
+          "websiteUrl": "www.thefoodplace.com",
+
+          "numberOfLocation": 2,
+
+          "federalTaxId": "123456781",
+
+          "paymentAcceptanceMethod": [
+
+            "inPerson",
+
+            "onlineSite"
+
+          ],
+
+          "pciadc": "No",
+
+          "pcidssValidated": "No",
+
+          "surroundingArea": "Commercial",
+
+          "productServiceSold": "Food",
+
+          "ownAddYears": 2,
+
+          "lengthOfContract": "lengthOfContract11",
+
+          "seasonal": "Yes",
+
+          "activeMonths": [
+
+            "Jan",
+
+            "Feb",
+
+            "Mar"
+
+          ],
+
+          "warranty": "1 YEAR",
+
+          "returnPolicy": "30 Day",
+
+          "taxExempt": "true",
+
+          "acceptCreditCards": "true",
+
+          "govOwnedMerchantCountry": "US"
+
+        },
+
+        "transactionInfo": {
+
+          "annualSalesVolume": 20000.12,
+
+          "percentRetailSwipedTransactions": 82,
+
+          "averageTicket": 2.3,
+
+          "highestTicket": 32.41,
+
+          "currentProcessor": "Global Payments",
+
+          "acceptChargebacks": "No",
+
+          "chargebackPercent": 0,
+
+          "returnPercent": 10,
+
+          "cardNotPresentPercent": 20,
+
+          "businessToBusinessPercent": 20,
+
+          "internetTransactionPercent": 10,
+
+          "inPersonTransactionPercent": 10,
+
+          "motoTransactionPercent": 10,
+
+          "annualCreditSalesVolume": 123.32,
+
+          "annualDebitSalesVolume": 32.23,
+
+          "annualAmexVolume": 10000,
+
+          "amexAverageTicket": 2.3,
+
+          "averageNumberofDays": 10,
+
+          "needsProcessingBy": "2022-11-01"
+
+        },
+
+        "authorizedSigners": [
+
+          {
+
+            "roleName": "Merchant",
+
+            "signingExperience": "email",
+
+            "signingOrder": "2",
+
+            "firstName": "Todd",
+
+            "lastName": "Davis",
+
+            "phoneNumber": "5131234567",
+
+            "email": "test@gmail.com",
+
+            "ssn": "123456789",
+
+            "dob": "2000-03-23",
+
+            "addressLine1": "4355 N Coalwhipe St.",
+
+            "city": "Denver",
+
+            "state": "CO",
+
+            "country": "United States",
+
+            "postalCode": "12345",
+
+            "title": "President",
+
+            "middleInitial": "M",
+
+            "phoneNumberExt": "1234",
+
+            "phoneType": "mobile",
+
+            "alternatePhone": "5131234567",
+
+            "alternatePhoneType": "home",
+
+            "faxNumber": "5131234567",
+
+            "addressLine2": "suite 104",
+
+            "postalCodeExtension": "1234",
+
+            "identification": [
+
+              {
+
+                "idType": "PASSPORT",
+
+                "idNumber": "312312341",
+
+                "issuedCity": "City Town",
+
+                "issuedState": "CO",
+
+                "issuedCountry": "US",
+
+                "dateIssued": "1999-01-30",
+
+                "dateExpires": "2020-02-11"
+
+              }
+
+            ]
+
+          }
+
+        ],
+
+        "contacts": [
+
+          {
+
+            "type": "Primary Contact",
+
+            "firstName": "Todd",
+
+            "lastName": "Davis",
+
+            "phoneNumber": "5131234567",
+
+            "email": "test@gmail.com",
+
+            "title": "President",
+
+            "middleInitial": "M",
+
+            "ssn": "123456789",
+
+            "birthDate": "2000-03-23",
+
+            "phoneNumberExt": "1234",
+
+            "phoneType": "mobile",
+
+            "alternatePhone": "5131234567",
+
+            "alternatePhoneType": "home",
+
+            "faxNumber": "5131234567"
+
+          }
+
+        ],
+
+        "addresses": [
+
+          {
+
+            "type": "Physical Address",
+
+            "addressLine1": "4355 N Coalwhipe St.",
+
+            "city": "Denver",
+
+            "state": "CO",
+
+            "country": "United States",
+
+            "postalCode": "12345",
+
+            "addressLine2": "suite 104",
+
+            "postalCodeExtension": "1234"
+
+          }
+
+        ],
+
+        "clientTrackingId": "1341341234132412341",
+
+        "owners": [
+
+          {
+
+            "type": "Control Owner Contact",
+
+            "firstName": "Todd",
+
+            "lastName": "Davis",
+
+            "phoneNumber": "5131234567",
+
+            "email": "test@gmail.com",
+
+            "addressLine1": "4355 N Coalwhipe St.",
+
+            "city": "Denver",
+
+            "state": "CO",
+
+            "country": "United States",
+
+            "postalCode": "12345",
+
+            "title": "President",
+
+            "middleInitial": "M",
+
+            "phoneNumberExt": "1234",
+
+            "phoneType": "mobile",
+
+            "alternatePhone": "5131234567",
+
+            "alternatePhoneType": "home",
+
+            "faxNumber": "5131234567",
+
+            "ownershipPercentage": 69,
+
+            "ssn": "123456789",
+
+            "dob": "2000-03-23",
+
+            "addressLine2": "suite 104",
+
+            "postalCodeExtension": "1234",
+
+            "identification": [
+
+              {
+
+                "idType": "PASSPORT",
+
+                "idNumber": "312312341",
+
+                "issuedCity": "City Town",
+
+                "issuedState": "CO",
+
+                "issuedCountry": "US",
+
+                "dateIssued": "1999-01-30",
+
+                "dateExpires": "2020-02-11"
+
+              }
+
+            ]
+
+          }
+
+        ],
+
+        "guarantors": [
+
+          {
+
+            "type": "Guarantor 1 Contact",
+
+            "firstName": "Todd",
+
+            "lastName": "Davis",
+
+            "phoneNumber": "5131234567",
+
+            "email": "test@gmail.com",
+
+            "addressLine1": "4355 N Coalwhipe St.",
+
+            "city": "Denver",
+
+            "state": "CO",
+
+            "country": "United States",
+
+            "postalCode": "12345",
+
+            "title": "President",
+
+            "middleInitial": "M",
+
+            "phoneNumberExt": "1234",
+
+            "phoneType": "mobile",
+
+            "alternatePhone": "5131234567",
+
+            "alternatePhoneType": "home",
+
+            "faxNumber": "5131234567",
+
+            "ownershipPercentage": 40,
+
+            "ssn": "123456789",
+
+            "dob": "2000-03-23",
+
+            "addressLine2": "suite 104",
+
+            "postalCodeExtension": "1234",
+
+            "identification": [
+
+              {
+
+                "idType": "PASSPORT",
+
+                "idNumber": "312312341",
+
+                "issuedCity": "City Town",
+
+                "issuedState": "CO",
+
+                "issuedCountry": "US",
+
+                "dateIssued": "1999-01-30",
+
+                "dateExpires": "2020-02-11"
+
+              }
+
+            ]
+
+          }
+
+        ],
+
+        "bankAccount": {
+
+          "ddaType": "Checking",
+
+          "achType": "Commercial Checking",
+
+          "accountNumber": "011401545",
+
+          "routingNumber": "102000076",
+
+          "bankName": "Bank name"
+
+        },
+
+        "advancedSettelment": [
+
+          {
+
+            "settlementCategories": [
+
+              "Deposits"
+
+            ],
+
+            "bankAccount": {
+
+              "ddaType": "Checking",
+
+              "achType": "Commercial Checking",
+
+              "accountNumber": "011401545",
+
+              "routingNumber": "102000076",
+
+              "bankName": "Bank name"
+
+            }
+
+          }
+
+        ],
+
+        "salesAgent": {
+
+          "firstName": "John",
+
+          "lastName": "Doe",
+
+          "email": "email52",
+
+          "id": "U15315",
+
+          "mobilePhoneNumber": "1234567890"
+
+        },
+
+        "installationContact": {
+
+          "firstName": "Sam",
+
+          "lastName": "Doe",
+
+          "email": "email47",
+
+          "id": "U15318",
+
+          "mobilePhoneNumber": "1234567890"
+
+        },
+
+        "additionalInformation": [
+
+          {
+
+            "key": "partnerEmployeeId",
+
+            "value": "4656"
+
+          }
+
+        ],
+
+        "leadSource": "LP Connect API",
+
+        "routeToSalesRep": true,
+
+        "productsInquiry": [
+
+          "productsInquiry28"
+
+        ]
+
+      }
+  headers:
+  - name: v-correlation-id
+    value: 3fcb1437-4e52-4946-9ae1-e618351b6d16
+    disabled: false
+  - name: Content-Type
+    value: application/json
+    disabled: false
+  - name: Authorization
+    value: Authorization98
+    disabled: false
+  _type: request
+  _id: req_9f0370ff6cd14d98bdbb53712fcca189
+  parentId: fld_841052b49a794648818eec119cb9cdf1
+  description: 'Use this endpoint to collect the merchant information needed to initiate a new contract. '
+- name: FetchApplication
+  method: GET
+  url: '{{default}}/applications'
+  headers:
+  - name: externalRefId
+    value: 3fcb1437-4e52-4946-9ae1-e618351b6d16
+    disabled: false
+  - name: v-correlation-id
+    value: 3fcb1437-4e52-4946-9ae1-e618351b6d16
+    disabled: false
+  - name: Authorization
+    value: Authorization79
+    disabled: false
+  _type: request
+  _id: req_8abeb99fa1a34c108d6f871841ee6ac7
+  parentId: fld_841052b49a794648818eec119cb9cdf1
+  description: Retrieves existing application data.
+- name: GetAdditionalConfigurations
+  method: GET
+  url: '{{default}}/terminal/additional-configurations'
+  headers:
+  - name: externalRefId
+    value: 3fcb1437-4e52-4946-9ae1-e618351b6d16
+    disabled: false
+  - name: v-correlation-id
+    value: 3fcb1437-4e52-4946-9ae1-e618351b6d16
+    disabled: false
+  - name: logicalApplicationId
+    value: '1073'
+    disabled: false
+  - name: Authorization
+    value: Authorization17
+    disabled: false
+  _type: request
+  _id: req_f9c527a336bc44ea9787b56e154f7400
+  parentId: fld_4c3596a2b79440dc8a60a65bc5663355
+  description: Fetches a list of valid terminal customizations and peripherals, such as electing to password protect a void.
+- name: GetEquipmentSupported
+  method: GET
+  url: '{{default}}/equipment/supported'
+  headers:
+  - name: externalRefId
+    value: 3fcb1437-4e52-4946-9ae1-e618351b6d16
+    disabled: false
+  - name: v-correlation-id
+    value: 3fcb1437-4e52-4946-9ae1-e618351b6d16
+    disabled: false
+  - name: Authorization
+    value: Authorization79
+    disabled: false
+  _type: request
+  _id: req_f5116db4b5cb4f7ea2a631efcffdc597
+  parentId: fld_4c3596a2b79440dc8a60a65bc5663355
+  description: Retrieve applicable equipment for an existing application.
+- name: GetTerminalInfo
+  method: GET
+  url: '{{default}}/equipment/terminal-var'
+  headers:
+  - name: externalRefId
+    value: 3fcb1437-4e52-4946-9ae1-e618351b6d16
+    disabled: false
+  - name: v-correlation-id
+    value: 3fcb1437-4e52-4946-9ae1-e618351b6d16
+    disabled: false
+  - name: Content-Type
+    value: application/json
+    disabled: false
+  - name: locationId
+    value: locationId82
+    disabled: false
+  - name: merchantId
+    value: merchantId96
+    disabled: false
+  - name: Authorization
+    value: Authorization56
+    disabled: false
+  _type: request
+  _id: req_5b8c561e493645029e9dcf7d088ee0f9
+  parentId: fld_5a582a1a4b7449e08bf270573ec89f93
+  description: Gets the terminal configuration information for a specific partner.
+- name: UpdateTerminal
+  method: PUT
+  url: '{{default}}/equipment/terminal-var'
+  body:
+    mimeType: application/json
+    text: '{"shippingOption":"next day","terminals":[{"terminalConfigs":{"requestId":"41231","terminalId":"67","terminalModel":"VAR - Xpient Solutions","price":187.99,"quantity":1,"logicalApplicationId":"194","accessMethod":"SSL","paymentMethod":"PURCHASE / SALE","environmentName":"Restaurant"},"products":[{"productId":"1","productName":"Credit"}]}]}'
+  headers:
+  - name: externalRefId
+    value: 3fcb1437-4e52-4946-9ae1-e618351b6d16
+    disabled: false
+  - name: v-correlation-id
+    value: 3fcb1437-4e52-4946-9ae1-e618351b6d16
+    disabled: false
+  - name: Content-Type
+    value: application/json
+    disabled: false
+  - name: locationId
+    value: locationId87
+    disabled: false
+  - name: merchantId
+    value: merchantId1
+    disabled: false
+  - name: Authorization
+    value: Authorization44
+    disabled: false
+  _type: request
+  _id: req_14e7be5fb8684e3b9241c006b29aa5e7
+  parentId: fld_5a582a1a4b7449e08bf270573ec89f93
+  description: Updates terminal configurations.
+- name: ConfigStandaloneTerminal
+  method: POST
+  url: '{{default}}/equipment/terminal-var'
+  body:
+    mimeType: application/json
+    text: '{"shippingOption":"next day","terminals":[{"terminalConfigs":{"requestId":"41231","terminalId":"67","terminalModel":"VAR - Xpient Solutions","price":187.99,"quantity":1,"logicalApplicationId":"194","accessMethod":"SSL","paymentMethod":"PURCHASE / SALE","environmentName":"Restaurant"},"products":[{"productId":"1","productName":"Credit"}]}]}'
+  headers:
+  - name: externalRefId
+    value: 3fcb1437-4e52-4946-9ae1-e618351b6d16
+    disabled: false
+  - name: v-correlation-id
+    value: 3fcb1437-4e52-4946-9ae1-e618351b6d16
+    disabled: false
+  - name: Content-Type
+    value: application/json
+    disabled: false
+  - name: locationId
+    value: locationId43
+    disabled: false
+  - name: merchantId
+    value: merchantId38
+    disabled: false
+  - name: Authorization
+    value: Authorization65
+    disabled: false
+  _type: request
+  _id: req_683ee5ed87b547f99daca29a1bb0ac63
+  parentId: fld_5a582a1a4b7449e08bf270573ec89f93
+  description: Sets up terminal configurations.
+- name: validateBoard
+  method: PUT
+  url: '{{default}}/applications/validate'
+  headers:
+  - name: externalRefId
+    value: 3fcb1437-4e52-4946-9ae1-e618351b6d16
+    disabled: false
+  - name: v-correlation-id
+    value: 3fcb1437-4e52-4946-9ae1-e618351b6d16
+    disabled: false
+  - name: Content-Type
+    value: application/json
+    disabled: false
+  - name: Authorization
+    value: Authorization10
+    disabled: false
+  _type: request
+  _id: req_98ffe1faf7a44d0a8b151d177d0880d0
+  parentId: fld_835f2f04e3b945ab96dca06a5e46675d
+  description: Begins the merchant validation process before boarding after all necessary information has been submitted to the API. Please see the reference guide for specific boarding requirements.
+- name: InititateBoard
+  method: PUT
+  url: '{{default}}/applications/board'
+  headers:
+  - name: externalRefId
+    value: 3fcb1437-4e52-4946-9ae1-e618351b6d16
+    disabled: false
+  - name: v-correlation-id
+    value: 3fcb1437-4e52-4946-9ae1-e618351b6d16
+    disabled: false
+  - name: Content-Type
+    value: application/json
+    disabled: false
+  - name: threatmetrixId
+    value: threatmetrixId29
+    disabled: false
+  - name: Authorization
+    value: Authorization77
+    disabled: false
+  _type: request
+  _id: req_70f553dbd3444fa7a918a68c8a082715
+  parentId: fld_835f2f04e3b945ab96dca06a5e46675d
+  description: Begins the merchant boarding process after all necessary information has been submitted to the API. Please see the reference guide for specific boarding requirements.
+- name: GetApplicationStatus
+  method: GET
+  url: '{{default}}/applications/status'
+  headers:
+  - name: externalRefId
+    value: 3fcb1437-4e52-4946-9ae1-e618351b6d16
+    disabled: false
+  - name: v-correlation-id
+    value: 3fcb1437-4e52-4946-9ae1-e618351b6d16
+    disabled: false
+  - name: Authorization
+    value: Authorization24
+    disabled: false
+  _type: request
+  _id: req_4b5eda3078c84c718c5a24c5ad29bbdb
+  parentId: fld_04a53c196e50431da939f738eb827a31
+  description: Retrieves the status of a contract when passed with an externalRefID. Both the externalRefID and authorization header are required.
+- name: fetchSignerStatus
+  method: GET
+  url: '{{default}}/applications/status/signers'
+  headers:
+  - name: externalRefId
+    value: 3fcb1437-4e52-4946-9ae1-e618351b6d16
+    disabled: false
+  - name: v-correlation-id
+    value: 3fcb1437-4e52-4946-9ae1-e618351b6d16
+    disabled: false
+  - name: Content-Type
+    value: application/json
+    disabled: false
+  - name: Authorization
+    value: Authorization65
+    disabled: false
+  _type: request
+  _id: req_b34dd4429a054402a1980322fae85a27
+  parentId: fld_04a53c196e50431da939f738eb827a31
+  description: Use this endpoint to get signer status
+- name: fetchApplicationStatusHistory
+  method: GET
+  url: '{{default}}/applications/status/history'
+  headers:
+  - name: externalRefId
+    value: 3fcb1437-4e52-4946-9ae1-e618351b6d16
+    disabled: false
+  - name: v-correlation-id
+    value: 3fcb1437-4e52-4946-9ae1-e618351b6d16
+    disabled: false
+  - name: Authorization
+    value: Authorization24
+    disabled: false
+  _type: request
+  _id: req_9e3520f2aa7140f785334282cbaecba9
+  parentId: fld_04a53c196e50431da939f738eb827a31
+  description: Use this endpoint to get a application's status history.
+- name: GetContract
+  method: GET
+  url: '{{default}}/contracts'
+  headers:
+  - name: externalRefId
+    value: 3fcb1437-4e52-4946-9ae1-e618351b6d16
+    disabled: false
+  - name: v-correlation-id
+    value: 3fcb1437-4e52-4946-9ae1-e618351b6d16
+    disabled: false
+  - name: Authorization
+    value: Authorization26
+    disabled: false
+  _type: request
+  _id: req_51c4f704d808495b808d3157c4eb9dab
+  parentId: fld_6b4f1d7959724dd78caa2ce62e914807
+  description: Returns a PDF contract to be signed.
+- name: DocusignLink
+  method: POST
+  url: '{{default}}/applications/documentlink'
+  body:
+    mimeType: application/json
+    text: >-
+      {
+
+        "externalRefId": "df8a6d82-3bb4-4f3b-ba18-57a5981ede8e",
+
+        "returnUrl": "https://docusign.com"
+
+      }
+  headers:
+  - name: v-correlation-id
+    value: 3fcb1437-4e52-4946-9ae1-e618351b6d16
+    disabled: false
+  - name: Content-Type
+    value: application/json
+    disabled: false
+  - name: Authorization
+    value: Authorization87
+    disabled: false
+  _type: request
+  _id: req_5b2f16f8753545aaa79ed30ff6353313
+  parentId: fld_6b4f1d7959724dd78caa2ce62e914807
+  description: Retrieves a Docusign link to view the contract.
+- name: Gethealth
+  method: GET
+  url: '{{default}}/applications/health'
+  headers:
+  - name: v-correlation-id
+    value: 3fcb1437-4e52-4946-9ae1-e618351b6d16
+    disabled: false
+  - name: Authorization
+    value: Authorization83
+    disabled: false
+  _type: request
+  _id: req_18a9b4e9f7d1438fa6543678297d9bef
+  parentId: fld_a09839d76f5d45bca2043b5d9dca8455
+  description: Checks the the health of Launchpad and its dependent down streams systems like CPQ, Sales Force, XAA and Jigsaw at regular intervals to check the system is up or down.
